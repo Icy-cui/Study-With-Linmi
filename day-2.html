@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title></title>
-    <link rel="stylesheet" type="text/css" href="day-1.css">
+    <!-- <link rel="stylesheet" type="text/css" href="day-2.css"> -->
 </head>
 
 <body>
@@ -41,6 +41,48 @@
         <li>List Item 4</li>
         <li>List Item 5</li>
     </ol>
+    </div>
+    <div>
+        <style>
+            .ex-box {
+                border: 3px solid #aaa;
+                background-color: #eee;
+                height: 200px;
+                width: 200px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                float: left;
+                margin-right: 10px;
+                border-radius: 5px;
+                font-size: 30px;
+            }
+            
+            .ex-box:last-of-type {
+                clear: right;
+            }
+            
+            .ex-btn {
+                background-color: #eee;
+                border: 2px solid #aaa;
+                padding: 4px 15px;
+                border-radius: 5px;
+                font-weight: bold;
+                font-size: 17px;
+                cursor: pointer;
+                /* changes the mouse when you hover the button */
+            }
+            
+            .ex-btn-success {
+                color: white;
+                background-color: limegreen;
+                border-color: green;
+            }
+        </style>
+        <div class="ex-box">Box 1</div>
+        <div class="ex-box">Box 2</div>
+        <button class="ex-btn">Default Button</button>
+        <button class="ex-btn ex-btn-success">Success Button</button>
     </div>
 </body>
 
