@@ -9,8 +9,10 @@
             "request": "launch",
             "name": "Launch Chrome against localhost",
             "url": "http://localhost:8080",
-            "webRoot": "${workspaceFolder}"
-            "file": "${workspaceFolder}/day-1.html"
+            "webRoot": "${workspaceFolder}",
+            // "file": "${workspaceFolder}/day-1.html"
+            // "file": "${workspaceFolder}/day-2.html"
+            "file": "${workspaceFolder}/day-3.html"
         }
     ]
 }
