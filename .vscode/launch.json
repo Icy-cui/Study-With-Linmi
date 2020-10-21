@@ -12,7 +12,8 @@
             "webRoot": "${workspaceFolder}",
             // "file": "${workspaceFolder}/day-1.html"
             // "file": "${workspaceFolder}/day-2.html"
-            "file": "${workspaceFolder}/day-3.html"
+            // "file": "${workspaceFolder}/day-3.html"
+            "file": "${workspaceFolder}/day-4.html"
         }
     ]
 }
