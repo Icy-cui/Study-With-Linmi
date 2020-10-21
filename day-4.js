@@ -1,3 +1,4 @@
+// sieve method get prime
 var isPrime = function(n) {
     let count = 0;
     let signs = new Uint8Array(n);
