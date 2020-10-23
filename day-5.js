@@ -5,10 +5,9 @@ let evenNum = function(n) {
             case 1:
                 continue;
             case 0:
-                alert(i);
+                console.log(i);
         }
     }
-}
-
+};
 let n = prompt('give a number', '')
 evenNum(n)
