@@ -15,7 +15,8 @@
             // "file": "${workspaceFolder}/day-3.html"
             // "file": "${workspaceFolder}/day-4.html"
             // "file": "${workspaceFolder}/day-5.html"
-            "file": "${workspaceFolder}/day-6.html"
+            // "file": "${workspaceFolder}/day-6.html"
+            "file": "${workspaceFolder}/day-7.html"
         }
     ]
 }

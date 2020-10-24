@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- Chinese Char -->
+    <!-- <meta charset="utf-8">
+    <meta http-equiv="Content-Language" content="zh-cn" /> -->
+    <title>Input column</title>
+</head>
+
+<body>
+    <form>
+        <!-- achieve function test button with same effect as "Enter" -->
+        <input id="input" type="text" onkeypress="handle(event)" placeholder="Please enter something:" />
+    </form>
+    <button onclick="btn()"> This button has same effect as press 'Enter'</button>
+    <div id="html"></div>
+
+    <form>
+        <input id="email" type="text" placeholder="Please enter email:" />
+    </form>
+    <button onclick="btn()"> Press Button </button>
+    <div id="disemail"></div>
+
+    <script src="day-7.js"></script>
+</body>
+
+</html>
