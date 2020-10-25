@@ -8,3 +8,4 @@ day-4: JavaScript: prime number count (copy)
 day-5: JavaScript: function + switch  
 day-6: JavaScript: closure + callback function + console.log  
 day-7: JavaScript: get input value by id + onclick + keyboard (key Code)  
+day-8: JavaScript: object prototype inheritance  
