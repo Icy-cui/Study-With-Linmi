@@ -28,7 +28,7 @@ Info.prototype.greet = function() {
 }
 
 function Person(id) {
-    this.id = id;
+    Info.call(this, id)
 }
 
 // prototype -- inheritance
