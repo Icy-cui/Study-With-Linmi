@@ -31,5 +31,7 @@ in_to_cp.addEventListener("keyup", function() {
 });
 
 document.querySelector('.button-container').addEventListener('click', function(event) {
-    alert(`You clicked on button ${event.target.innerText}`);
+    if (event.target.tagName === 'BUTTON') {
+        alert(`You clicked on button ${event.target.innerText}`);
+    }
 });
