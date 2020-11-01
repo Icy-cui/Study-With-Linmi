@@ -4,28 +4,47 @@ let prevOp;
 const screen = document.querySelector('.screen')
 
 function buttonClick(value) {
-    let nextVal = value;
+    let nextVal = parseInt(value);
     // console.log(typeof(value));
     // console.log(typeof(parseInt(value))); // change datatype to int
-    if (nextVal != NaN) {
+    if (isNaN(parseInt(value))) {
+        dealSymbols(value);
+    } else {
         if (buffer === "0") {
             buffer = value;
         } else {
             buffer += value;
-            console.log(buffer);
+            // console.log(buffer);
         }
-    } else {
-        dealSymbols(value);
     }
     screen.innerText = buffer;
 }
 
-function handleMath() {
-
+function handleMath(value) {
+    if (buffer === "0") {
+        // do nothing
+        return;
+    }
+    const intBuffer = parseInt(buffer);
+    if (totalNum === 0) {
+        totalNum = intBuffer;
+    } else {
+        operations(intBuffer);
+    }
+    prevOp = value;
+    buffer = "0";
 }
 
-function flushOperation() {
-
+function operations(intBuffer) {
+    if (prevOp === "+") {
+        totalNum += intBuffer;
+    } else if (prevOp === "-") {
+        totalNum -= intBuffer;
+    } else if (prevOp === "×") {
+        totalNum *= intBuffer;
+    } else {
+        totalNum /= intBuffer;
+    }
 }
 
 function dealSymbols(value) {
@@ -38,7 +57,7 @@ function dealSymbols(value) {
             if (buffer.length == 1) {
                 buffer = "0";
             } else {
-                buffer.substring(0, buffer.length - 1)
+                buffer = buffer.substring(0, buffer.length - 1);
             }
             break;
         case "+":
@@ -48,9 +67,10 @@ function dealSymbols(value) {
             handleMath(value);
             break;
         case "=":
-            if (prevOp == null)
+            if (prevOp == null) {
                 return;
-            flushOperation(parseInt(buffer));
+            }
+            operations(parseInt(buffer));
             prevOp = null;
             buffer = +totalNum;
             totalNum = 0;
