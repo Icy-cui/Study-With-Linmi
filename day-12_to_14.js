@@ -7,7 +7,7 @@ function buttonClick(value) {
     let nextVal = parseInt(value);
     // console.log(typeof(value));
     // console.log(typeof(parseInt(value))); // change datatype to int
-    if (isNaN(parseInt(value))) {
+    if (isNaN(nextVal)) {
         dealSymbols(value);
     } else {
         if (buffer === "0") {
