@@ -1,0 +1,23 @@
+{
+  "name": "Study-With-Linmi",
+  "version": "1.0.0",
+  "description": "Study front-end course with linmi",
+  "main": "day-10.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Icy-cui/Study-With-Linmi.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Icy-cui/Study-With-Linmi/issues"
+  },
+  "homepage": "https://github.com/Icy-cui/Study-With-Linmi#readme",
+  "dependencies": {
+    "popmotion": "^9.0.0"
+  }
+}
