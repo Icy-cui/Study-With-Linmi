@@ -1,9 +1,7 @@
 // code taken from one of the examples on popmotion.io
-// import { styler, value, listen, pointer, spring } from 'popmotion';
+import { styler, value, listen, pointer, spring } from 'popmotion';
 
-const popmotion = require(
-    'popmotion'
-);
+// import popmotion from 'popmotion';
 
 const ball = document.querySelector(".box");
 const divStyler = styler(ball);
