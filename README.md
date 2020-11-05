@@ -18,3 +18,4 @@ day-14: JavaScript: calculator finish
 day-15: JavaScript: AJAX asynchronous action   
 day-16: JavaScript: Node.js: popmotion parcel   
 day-17: JavaScript: Node.js: express  
+day-18: JavaScript: example   
