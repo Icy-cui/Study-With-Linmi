@@ -21,3 +21,4 @@ day-17: JavaScript: Node.js: express
 day-18: JavaScript: example  
 day-19: JavaScript: export   
 day-20: JavaScript: DOM child element
+day-18: JavaScript: example  
