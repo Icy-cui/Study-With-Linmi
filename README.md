@@ -20,5 +20,5 @@ day-16: JavaScript: Node.js: popmotion parcel
 day-17: JavaScript: Node.js: express  
 day-18: JavaScript: example  
 day-19: JavaScript: export   
-day-20: JavaScript: DOM child element
+day-20: JavaScript: DOM child element  
 day-21: JavaScript: example  
