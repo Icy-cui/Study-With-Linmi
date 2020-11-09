@@ -5,13 +5,40 @@ class UserForm {
         this.bindEvents();
     }
 
-}
-/*数据部分结束*/
+    bindEvents() {
+        this.el.addEventListener('submit', e => {
+            e.preventDefault();
+            let data = {};
 
-let userList = new UserList();
-let userTable = new UserTable('table', userList);
+            let q = this.el.querySelector.bind(this.el);
+            data.name = q('[name=name]').value;
+            data.gender = q('[name=gender]').value;
+            data.score = q('[name=score]').value;
+            data.quality = q('[name=quality]').value;
+
+            this.onSubmit(data);
+
+            this.reset();
+        });
+    }
+}
+
+class UserList {
+    constructor() {
+
+    }
+
+}
+
+class UserTable {
+
+}
+
 
 new UserForm('form', data => {
     userList.add(data);
     userTable.render();
 });
+
+let userList = new UserList();
+let userTable = new UserTable('table', userList);
