@@ -23,22 +23,70 @@ class UserForm {
     }
 }
 
+
+class UserTable {
+    constructor(list, selector) {
+        this.$list = list; //data
+        this.el = document.querySelector(selector);
+        this.render();
+    }
+
+    // update table
+    render() {
+        this.$list.all().forEach(user => {
+            let tr = document.createElement('tr');
+            new UserList(user, this.el)
+        });
+    }
+}
+
 class UserList {
-    constructor() {
+    constructor(user, parent, selector) {
+        this.$user = user;
+        this.elparent = parent;
+        this.el = selector ? document.querySelector(selector) : document.querySelector('tr');
+        this.render();
 
     }
 
+    render() {
+        let user = this.$user;
+        this.el.innerHTML = `
+            <td>${user.name}</td>
+            <td>${user.gender}</td>
+            <td>${user.score}</td>
+            <td>${user.quality}</td>
+            <td><button class="remove">delete</button></td>
+            `;
+        // append child
+        this.elparent.appendChild(this.el);
+        this.listenRemove();
+    }
+
+    listenRemove() {
+        this.el.querySelector('.remove').addEventListener("click", () => {
+            this.el.remove();
+        })
+    }
 }
-
-class UserTable {
-
-}
-
 
 new UserForm('form', data => {
     userList.add(data);
     userTable.render();
 });
 
-let userList = new UserList();
-let userTable = new UserTable('table', userList);
+let userList = new UserList([{
+        name: 'whh',
+        gender: '男',
+        score: 20,
+        quality: 20,
+    },
+    {
+        name: 'lsd',
+        gender: '女',
+        score: 30,
+        quality: 30,
+    },
+]);
+
+let userTable = new UserTable(userList, 'table');

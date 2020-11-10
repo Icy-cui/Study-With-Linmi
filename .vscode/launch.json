@@ -26,7 +26,8 @@
             // "file": "${workspaceFolder}/day-16.html"
             // "file": "${workspaceFolder}/day-17/day-17.html"
             // "file": "${workspaceFolder}/day-18/day-18.html"
-            "file": "${workspaceFolder}/day-19/day-19.html"
+            // "file": "${workspaceFolder}/day-19/day-19.html"
+            "file": "${workspaceFolder}/day-21/day-21.html"
         }
     ]
 }
