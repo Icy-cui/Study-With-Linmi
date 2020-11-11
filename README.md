@@ -22,3 +22,4 @@ day-18: JavaScript: example
 day-19: JavaScript: export   
 day-20: JavaScript: DOM child element  
 day-21: JavaScript: example  
+day-22: JavaScript: construct class     
