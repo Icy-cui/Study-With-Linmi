@@ -22,4 +22,6 @@ day-18: JavaScript: example
 day-19: JavaScript: export   
 day-20: JavaScript: DOM child element  
 day-21: JavaScript: example  
-day-22: JavaScript: construct class     
+day-22: JavaScript: construct class    
+day-23: JavaScript: factory mode example; CSS   
+day-24: JavaScript: single instance mode example   
