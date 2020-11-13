@@ -1,0 +1,26 @@
+#logo {
+    margin: 100px;
+    color: gray;
+    border: 900;
+}
+
+form {
+    margin: 100px;
+}
+
+form input {
+    /* color: gray; */
+    height: 30px;
+    width: 200px;
+    border: 10px solid yellow;
+    background-color: rgb(195, 195, 196);
+}
+
+.submit {
+    border: teal solid;
+}
+
+#user {
+    margin: 100px;
+    color: hotpink;
+}
