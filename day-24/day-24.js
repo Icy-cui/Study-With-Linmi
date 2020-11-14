@@ -44,9 +44,12 @@ function Resource() {
 
 }
 
+var output = document.querySelector('.output');
 var r = new Resource();
 r.balance = 20;
+
 console.log('r:', r) // 20
+output.innerHTML = r.balance;
 
 var r2 = new Resource();
 console.log('r2:', r2); // 20
