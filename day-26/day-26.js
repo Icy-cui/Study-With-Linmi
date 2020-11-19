@@ -15,14 +15,25 @@ Order.prototype.calc = function() {
 // 构造器
 function StudentCard() {}
 StudentCard.prototype.calc = function(total) {
+    if (holiday) {
+        return total *= .9;
+    } else {
         return total;
     }
-    // 构造器
+}
+
+// 构造器
 function TeacherCard() {}
 TeacherCard.prototype.calc = function(total) {
-        return total * .9;
+    if (teachersDay) {
+        total *= .5;
+    } else {
+        total *= .9
     }
-    // 构造器
+    return price;
+}
+
+// 构造器
 function Cash() {}
 Cash.prototype.calc = function(total) {
     return total * 1.1;
@@ -30,3 +41,9 @@ Cash.prototype.calc = function(total) {
 
 var order = new Order();
 order.payMethod(new StudentCard());
+
+// condition 1
+var teachersDay = false;
+
+//condiiton 2
+var holiday = false;
