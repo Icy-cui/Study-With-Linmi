@@ -25,3 +25,6 @@ day-21: JavaScript: example
 day-22: JavaScript: construct class    
 day-23: JavaScript: factory mode example; CSS   
 day-24: JavaScript: single instance mode example   
+day-25: JavaScript: single instance mode example    
+day-26: JavaScript: consturctor   
+day-27: JavaScript: leetcode 53.    
