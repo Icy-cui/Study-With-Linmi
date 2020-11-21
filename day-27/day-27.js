@@ -19,20 +19,24 @@ console.log(res);
 var ans = document.querySelector('.ans');
 ans.innerHTML = 'List ' + '\[' + l1 + '\]' + ' has max subarray value:  ' + res;
 
-var coin = [1, 2, 5, 10];
-var num = 36;
+var prices = [1, 2, 5, 10];
 
-function lessCoin(coin, num) {
-    var temp_res = 0;
-    var temp = 0;
-    var res = 0;
-    for (i = coin.length; i > -1; i--) {
-        temp_res = num % coin[i];
-        if (num - temp_res * coin[i] > 0) {
-            num -= temp_res * coin[i]
-            res += temp;
+var maxProfit = function(prices) {
+    if (!prices || !prices.length) { return 0; }
+
+    const len = prices.length;
+    let max = 0,
+        cur = 0,
+        next = 0;
+
+    for (let i = 0; i < len; i++) {
+        cur = prices[i]
+        for (let j = i + 1; j < len; j++) {
+            next = prices[j]
+            if (next > cur) {
+                max = Math.max(max, next - cur)
+            }
         }
     }
+    return max
 }
-
-var res2 = lessCoin(coin, num);
