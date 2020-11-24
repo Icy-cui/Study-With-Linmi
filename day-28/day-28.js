@@ -9,7 +9,7 @@ Payment.prototype.setNext = function(payment) {
 Payment.prototype.canPay = function(money) {
     return this.balance >= money;
 }
-Payment.prototype.pay = function(money) {
+Payment.prototype.pay = function(amount) {
     if (!this.canPay(amount)) {
         console.log(this.balance);
 
