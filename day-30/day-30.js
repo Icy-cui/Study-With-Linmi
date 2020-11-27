@@ -21,3 +21,14 @@ LeaveCommand.prototype.undo = function() {
     console.log('恢复课程...');
     // ...
 }
+
+var whh = new Teacher();
+var leave = new LeaveCommand(whh);
+
+console.log(whh);
+
+leave.do();
+console.log(whh);
+
+leave.undo();
+console.log(whh);
