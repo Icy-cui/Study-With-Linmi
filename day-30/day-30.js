@@ -1,3 +1,30 @@
+// ES6
+// class Teacher {
+//     constructor() {
+//       this.fullAttendence = true;
+//     }
+//   }
+
+//   class LeaveCommand {
+//     constructor(teacher) {
+//       this.teacher = teacher;
+//     }
+
+//     do() {
+//       this.teacher.fullAttendence = false;
+//       console.log(‘No full attendence!’);
+//       // ...
+//     }
+
+//     undo() {
+//       this.teacher.fullAttendence = true;
+//       console.log('Re full attendence.');
+//       // ...
+//     }
+//   }
+
+
+
 function Teacher() {
     this.fullAttendence = true;
 }
