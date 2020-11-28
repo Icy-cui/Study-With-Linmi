@@ -9,26 +9,28 @@ function LeaveCommand(teacher) {
 LeaveCommand.prototype.do = function() {
     this.teacher.fullAttendence = false;
 
-    console.log('请假成功');
-    console.log('重新安排课程...');
+    console.log('No full attendence!');
+    aa_html.innerHTML = 'No full attendence!';
     // ...
 }
 
 LeaveCommand.prototype.undo = function() {
     this.teacher.fullAttendence = true;
 
-    console.log('撤销请假');
-    console.log('恢复课程...');
+    console.log('Re full attendence.');
+    aa_html.innerHTML = 'Re full attendence.';
     // ...
 }
 
-var whh = new Teacher();
-var leave = new LeaveCommand(whh);
+var aa = new Teacher();
+var aa_html = document.querySelector('.aa');
 
-console.log(whh);
+var leave = new LeaveCommand(aa);
+
+console.log(aa);
 
 leave.do();
-console.log(whh);
+console.log(aa);
 
 leave.undo();
-console.log(whh);
+console.log(aa);
