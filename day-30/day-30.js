@@ -22,6 +22,9 @@
 //       // ...
 //     }
 //   }
+//
+// var aa = new Teacher();
+// var leave = new LeaveCommand(aa);
 
 
 
