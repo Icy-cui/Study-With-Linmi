@@ -30,6 +30,16 @@
                 return student.termId != termId;
             });
         }
+
+        var list = new StudentList;
+        list.add(new Student(1));
+        list.add(new Student(1));
+        list.add(new Student(2));
+        list.add(new Student(2));
+        console.log(list);
+
+        list.removeByTerm(2);
+        console.log(list);
     </script>
 </body>
 
