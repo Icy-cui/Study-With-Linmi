@@ -26,6 +26,7 @@
         }
 
         StudentList.prototype.removeByTerm = function(termId) {
+            // list filter method
             this.list = this.list.filter(function(student) {
                 return student.termId != termId;
             });
