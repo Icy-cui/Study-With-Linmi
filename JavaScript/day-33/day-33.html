@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function Member() {}
+
+        Member.prototype.send = function(to, msg) {
+            to.rcv(this, msg);
+        }
+
+        Member.prototype.rcv = function(from, msg) {
+            console.log(msg);
+        }
+
+        function ChatProxy() {
+            this.log = [];
+        }
+        ChatProxy.prototype.send = function(from, to, msg) {
+            this.log.push({
+                from,
+                to,
+                msg
+            });
+
+            to.rcv(from, msg);
+            console.log(this.log.length);
+        }
+
+        var proxy = new ChatProxy();
+        var aa = new Member();
+        var bb = new Member();
+
+        proxy.send(aa, bb, 'send a to b info1');
+        proxy.send(bb, aa, 'send b to a info2');
+    </script>
+</body>
+
+</html>

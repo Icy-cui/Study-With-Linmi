@@ -36,7 +36,8 @@
             // "file": "${workspaceFolder}/day-27/day-27.html"
             // "file": "${workspaceFolder}/day-28/day-28.html"
             // "file": "${workspaceFolder}/day-30/day-30.html"
-            "file": "${workspaceFolder}/day-31/day-31.html"
+            // "file": "${workspaceFolder}/day-31/day-31.html"
+            "file": "${workspaceFolder}/JavaScript/day-33.html"
         }
     ]
 }
