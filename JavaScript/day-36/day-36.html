@@ -6,6 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>day-36 bootstrap</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <style>
+        .control-label {
+            width: 100%;
+            font-weight: bold;
+            text-align: center;
+        }
+    </style>
 </head>
 
 <body>
@@ -20,13 +27,14 @@
         </div>
         <div class="col-md-4">
             <form>
-                <h2>sign up</h2>
-                <div class="form-inline">
+                <h2 id="sign">sign up</h2>
+                <div>
                     <div class="form-group has-success">
                         <label class='control-label'>Family name</label>
                         <input class="form-control" type="text">
+
                     </div>
-                    <div class="form-group">
+                    <div class="form-group has-warning has-feedback">
                         <label class='control-label'>Given name</label>
                         <input class="form-control" type="text">
                     </div>
