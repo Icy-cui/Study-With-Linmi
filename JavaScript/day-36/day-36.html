@@ -10,7 +10,10 @@
         .control-label {
             width: 100%;
             font-weight: bold;
-            text-align: center;
+        }
+        
+        button {
+            cursor: pointer;
         }
     </style>
 </head>
@@ -26,20 +29,34 @@
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima accusamus impedit at ab, corporis pariatur dicta animi autem, velit aperiam suscipit, ratione commodi doloremque expedita similique deleniti magni perferendis repellat!
         </div>
         <div class="col-md-4">
-            <form>
-                <h2 id="sign">sign up</h2>
-                <div>
-                    <div class="form-group has-success">
+            <div class=" container ">
+                <form>
+                    <h2 id="sign ">sign up</h2>
+                    <div class="form-group has-success ">
                         <label class='control-label'>Family name</label>
-                        <input class="form-control" type="text">
-
+                        <input class="form-control " type="text ">
                     </div>
-                    <div class="form-group has-warning has-feedback">
+                    <div class="form-group has-warning ">
                         <label class='control-label'>Given name</label>
-                        <input class="form-control" type="text">
+                        <input class="form-control " type="text ">
                     </div>
-                </div>
-            </form>
+                    <div class="form-group ">
+                        <label class='control-label'>Amount</label>
+                        <div class="input-group ">
+                            <div class="input-group-addon ">$</div>
+                            <input class="form-control " type="text ">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <button class="btn btn-default btn-sm" type="submit">Reset</button>
+                        <button class="btn btn-primary  btn-sm" type="submit">Submit</button>
+                        <button class="btn btn-danger  btn-sm" type="submit">Delete</button>
+                        <button class="btn btn-warning  btn-sm" type="submit">Warning</button>
+                        <a class="btn btn-info  btn-sm" href="https://www.google.com/">Google</a>
+                    </div>
+                </form>
+                </form>
+            </div>
         </div>
     </div>
 
