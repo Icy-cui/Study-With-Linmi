@@ -1,10 +1,19 @@
 /* Form */
 class UserForm {
-    constructor(selector) {
+    constructor(selector, errSelect = '.alert-danger') {
         this.el = document.querySelector(selector);
+        this.err = this.el.querySelector(errSelect);
         this.bindEvents();
     }
     bindEvents() {
+        this.bindSubmit();
+        this.bindInput();
+    }
+
+    /**
+     * 输入信息，并显示错误信息
+     */
+    bindSubmit() {
         let form = this.el;
         let query = form.querySelector.bind(form);
         form.addEventListener('submit', e => {
@@ -17,8 +26,30 @@ class UserForm {
             // console.log(name);
             // validate form input
             let builder = new Builder();
-            builder.setName(name).setGender(gender).setQuality(quality).setScore(score);
+            try {
+                builder.setName(name).setGender(gender).setQuality(quality).setScore(score);
+            } catch (e) {
+                // display error information
+                this.err.hidden = false;
+                this.err.innerHTML = e;
+                return;
+            }
+
             console.log(builder.build());
+            this.el.reset();
+        })
+    }
+
+    /**
+     * 当用户输入的时候隐藏错误信息
+     */
+    bindInput() {
+        let form = this.el;
+        form.addEventListener('keyup', e => {
+            if (e.key == 'Enter') {
+                return;
+            }
+            this.err.hidden = true;
         })
     }
 }
