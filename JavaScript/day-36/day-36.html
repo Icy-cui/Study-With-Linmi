@@ -7,6 +7,11 @@
     <title>day-36 bootstrap</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
     <style>
+        body {
+            max-width: 1100px;
+            margin: 20px auto;
+        }
+        
         .control-label {
             width: 100%;
             font-weight: bold;
@@ -19,6 +24,25 @@
 </head>
 
 <body>
+
+    <nav class="navbar  fixed-top navbar-expand-lg" style="background-color: #e3f2fd;">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Navbar</a>
+            <span class="navbar-text">
+                Navbar text with an inline element
+            </span>
+            <div>
+                <div class="navbar-nav">
+                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    <a class="nav-link" href="#">Features</a>
+                    <a class="nav-link" href="#">Pricing</a>
+                    <a class="nav-link disabled" href="#" aria-disabled="true">Disabled</a>
+                </div>
+            </div>
+
+        </div>
+    </nav>
+
     <div class="row">
         <div class="col-md-4">
             <h2>side bar</h2>
@@ -63,6 +87,7 @@
             </div>
         </div>
     </div>
+
 
 
     <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js " integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n " crossorigin="anonymous ">
