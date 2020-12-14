@@ -1,30 +1,55 @@
-import React from "react";
-import logo from "./logo.svg";
+import React, { Component } from "react";
+import hehe from "./hehe.svg";
 import "./App.css";
-import { Button } from 'antd';
-// import { render } from 'react-dom';
-import Clock, { Clock2 } from "./Clock";
+import { Space, Button } from "antd";
+import { Clock2 } from "./Clock";
+import Todos from "./Todos";
+import LikeButton from './LikeButton'
+// import { Components } from "antd/lib/date-picker/generatePicker";
 
 const ComponentA = function (props) {
-  return <h1>ComponentA, welcome {props.name}</h1>;
+  return <h1>Welcome {props.name}, create your today's TODO list!</h1>;
 };
 
-const App = () => {
-  const componentA1 = <ComponentA name="magicly" />;
-  const componentA2 = ComponentA({ name: "magicly" });
-  console.log(typeof componentA1, typeof componentA2, typeof ComponentA);
-  console.log(componentA1, componentA2);
-  return (
-    <div className="App">
-      <img src={logo} className="App-logo" alt="logo" />
-      <componentA1 />
-      {componentA1}
-      {componentA2}
-      <Clock />
-      <Clock2 />
-      <Button type="primary">Button</Button>
-    </div>
-  );
-};
+class App extends Component {
+  state = {
+    todos: [
+      {
+        id: 1,
+        title: "Go out",
+        completed: false,
+      },
+      {
+        id: 2,
+        title: "Play with cc",
+        completed: false,
+      },
+      {
+        id: 3,
+        title: "Eat dinner",
+        completed: false,
+      },
+    ],
+  };
+
+  render() {
+    console.log(this.state.todos);
+    const test_comp = ComponentA({ name: "linmi" });
+    return (
+      <div className="App">
+        <img src={hehe} alt="img" style={{ height: 200, width: 160 }} />
+        {test_comp}
+        <Clock2 />
+        <h2>Your Todo List: </h2>
+        <Space direction="vertical" size={30}>
+            <Todos todos={this.state.todos}/>
+            <Button type="primary">test butten</Button>
+            <LikeButton />
+        </Space>
+        
+      </div>
+    );
+  }
+}
 
 export default App;

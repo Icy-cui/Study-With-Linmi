@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 
-const Clock = () => {
-  return <h1>{new Date().toLocaleTimeString()}</h1>;
-};
+// const Clock = () => {
+//   return <h1>{new Date().toLocaleTimeString()}</h1>;
+// };
 
 class Clock2 extends Component {
   constructor(props) {
@@ -25,9 +25,9 @@ class Clock2 extends Component {
   }
 
   render() {
-    return <h1>{this.state.time}</h1>;
+    return <h1>Now the time is: {this.state.time}</h1>;
   }
 }
 
-export default Clock;
+// export default Clock;
 export { Clock2 };
