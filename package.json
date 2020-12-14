@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/Icy-cui/Study-With-Linmi#readme",
   "dependencies": {
+    "antd": "^4.9.3",
     "popmotion": "^9.0.0"
   }
 }
