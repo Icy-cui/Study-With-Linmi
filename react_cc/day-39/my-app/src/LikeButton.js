@@ -37,8 +37,8 @@ class LikeButton extends Component {
     return (
       <Button onClick={this.onClickButton.bind(this, time)}>
         {this.state.isLiked ? wordings.unlikedDisplay : wordings.likedDisplay}{" 👍 "}
-        {"changed time: "}
-        {this.state.times}
+        {/* {"changed time: "}
+        {this.state.times} */}
       </Button>
     );
   }

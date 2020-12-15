@@ -2,9 +2,11 @@ import React, { Component } from "react";
 import Comment from "./Comment";
 
 class CommentList extends Component {
-    static defaultProps = {
-        comments: []
-    }
+
+  static defaultProps = {
+    comments: [],
+  };
+
   render() {
     // const comments = [
     //   { name: "Jerry", content: "Hello" },
@@ -14,10 +16,11 @@ class CommentList extends Component {
 
     // js map function
     console.log(
-        this.props.comments.map((c) => {
-        return (c.name, c.content);
+      this.props.comments.map((c) => {
+        return c.comment;
       })
     );
+    console.log( this.props.comments);
 
     return (
       <div>

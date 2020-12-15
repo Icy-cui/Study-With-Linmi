@@ -7,9 +7,6 @@ import { Space, Button } from "antd";
 import { Clock2 } from "./Clock";
 // todo block
 import Todos from "./Todos";
-// LikeButton block
-import LikeButton from "./LikeButton";
-
 // Comment bock
 import CommentInput from "./CommentInput";
 import CommentList from "./CommentList";
@@ -44,8 +41,8 @@ class App extends Component {
   }
 
   submitContent(comment) {
-    console.log(comment);
-    console.log(this.state.comments);
+    // console.log(comment);
+    // console.log(this.state.comments);
     this.state.comments.push(comment);
     this.setState({
       comments: this.state.comments,
@@ -65,11 +62,7 @@ class App extends Component {
           {/* 将 this.state.todos 作为参数传到 Todo class 中， Todo class 中即可使用 this.props 指代 this.state */}
           <Todos todos={this.state.todos} />
           <Button type="primary">test butten</Button>
-          {/* 1. LikedButton 传参： 把一个对象 wordings 传给点赞组件作为参数 */}
-          {/* <LikeButton wordings={{likedText: '已赞', unlikedText: '赞'}} /> */}
-
-          {/* 2. 如果不给 wordings 传参，则使用默认的参数 */}
-          <LikeButton />
+          
           <div className="wrapper">
             <CommentInput onSubmit={this.submitContent.bind(this)} />
             <CommentList comments={this.state.comments} />
