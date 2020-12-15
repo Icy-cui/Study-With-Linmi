@@ -7,13 +7,9 @@ class Todos extends Component {
       console.log(`checked = ${e.key}`);
   }
   render() {
-    return this.props.todos.map((todo) => (
-      <div key={todo.id}>
-        <Checkbox onChange={this.onChange} style={{ width: "100%" }}>
-          {todo.title}
-        </Checkbox>
-      </div>
-    ));
+      return (this.props.todos.map((todo)=>(
+            <Checkbox key={todo.id} style={{ width: "100%" }}>{todo.title}</Checkbox>
+      )))
   }
 }
 

@@ -1,36 +1,56 @@
 import React, { Component } from "react";
-import hehe from "./hehe.svg";
 import "./App.css";
+import hehe from "./hehe.svg";
+// antd style
 import { Space, Button } from "antd";
+// clock block
 import { Clock2 } from "./Clock";
+// todo block
 import Todos from "./Todos";
-import LikeButton from './LikeButton'
-// import { Components } from "antd/lib/date-picker/generatePicker";
+// LikeButton block
+import LikeButton from "./LikeButton";
+
+// Comment bock
+import CommentInput from "./CommentInput";
+import CommentList from "./CommentList";
 
 const ComponentA = function (props) {
   return <h1>Welcome {props.name}, create your today's TODO list!</h1>;
 };
 
 class App extends Component {
-  state = {
-    todos: [
-      {
-        id: 1,
-        title: "Go out",
-        completed: false,
-      },
-      {
-        id: 2,
-        title: "Play with cc",
-        completed: false,
-      },
-      {
-        id: 3,
-        title: "Eat dinner",
-        completed: false,
-      },
-    ],
-  };
+  constructor() {
+    super();
+    this.state = {
+      comments: [],
+      todos: [
+        {
+          id: 1,
+          title: "Go out",
+          completed: false,
+        },
+        {
+          id: 2,
+          title: "Play with cc",
+          completed: false,
+        },
+        {
+          id: 3,
+          title: "Eat dinner",
+          completed: false,
+        },
+      ],
+    };
+  }
+
+  submitContent(comment) {
+    console.log(comment);
+    console.log(this.state.comments);
+    this.state.comments.push(comment);
+    this.setState({
+      comments: this.state.comments,
+    });
+  }
 
   render() {
     console.log(this.state.todos);
@@ -42,11 +62,19 @@ class App extends Component {
         <Clock2 />
         <h2>Your Todo List: </h2>
         <Space direction="vertical" size={30}>
-            <Todos todos={this.state.todos}/>
-            <Button type="primary">test butten</Button>
-            <LikeButton />
+          {/* 将 this.state.todos 作为参数传到 Todo class 中， Todo class 中即可使用 this.props 指代 this.state */}
+          <Todos todos={this.state.todos} />
+          <Button type="primary">test butten</Button>
+          {/* 1. LikedButton 传参： 把一个对象 wordings 传给点赞组件作为参数 */}
+          {/* <LikeButton wordings={{likedText: '已赞', unlikedText: '赞'}} /> */}
+
+          {/* 2. 如果不给 wordings 传参，则使用默认的参数 */}
+          <LikeButton />
+          <div className="wrapper">
+            <CommentInput onSubmit={this.submitContent.bind(this)} />
+            <CommentList comments={this.state.comments} />
+          </div>
         </Space>
-        
       </div>
     );
   }
