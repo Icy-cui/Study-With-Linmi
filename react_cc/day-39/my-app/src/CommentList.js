@@ -12,7 +12,7 @@ class CommentList extends Component {
     //   { name: "Jerry", content: "Hello" },
     //   { name: "Tomy", content: "World" },
     //   { name: "Lucy", content: "Good" },
-    // ];
+    // ]
 
     // js map function
     console.log(

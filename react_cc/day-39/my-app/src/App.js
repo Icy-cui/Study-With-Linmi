@@ -48,6 +48,17 @@ class App extends Component {
       comments: this.state.comments,
     });
   }
+  markComplete = (id) => {
+    // console.log('pass from todos ', {id})
+    this.setState({
+      todos: this.state.todos.map((todo) => {
+        if (todo.id === id) {
+          todo.completed = !todo.completed;
+        }
+        return todo;
+      }),
+    });
+  };
 
   render() {
     console.log(this.state.todos);
@@ -59,10 +70,11 @@ class App extends Component {
         <Clock2 />
         <h2>Your Todo List: </h2>
         <Space direction="vertical" size={30}>
+          {/* 创建 todo list */}
           {/* 将 this.state.todos 作为参数传到 Todo class 中， Todo class 中即可使用 this.props 指代 this.state */}
-          <Todos todos={this.state.todos} />
+          <Todos todos={this.state.todos} markComplete={this.markComplete} />
           <Button type="primary">test butten</Button>
-          
+          {/* 创建可评论可显示评论的部分 comment */}
           <div className="wrapper">
             <CommentInput onSubmit={this.submitContent.bind(this)} />
             <CommentList comments={this.state.comments} />
