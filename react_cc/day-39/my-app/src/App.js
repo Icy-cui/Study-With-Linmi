@@ -2,14 +2,17 @@ import React, { Component } from "react";
 import "./App.css";
 import hehe from "./hehe.svg";
 // antd style
-import { Space, Button } from "antd";
+import { Space } from "antd";
 // clock block
 import { Clock2 } from "./Clock";
 // todo block
 import Todos from "./Todos";
+import AddTodo from "./AddTodo";
 // Comment bock
 import CommentInput from "./CommentInput";
 import CommentList from "./CommentList";
+// id
+import {v4} from 'uuid';
 
 const ComponentA = function (props) {
   return <h1>Welcome {props.name}, create your today's TODO list!</h1>;
@@ -22,17 +25,17 @@ class App extends Component {
       comments: [],
       todos: [
         {
-          id: 1,
+          id: v4(),
           title: "Go out",
           completed: false,
         },
         {
-          id: 2,
+          id: v4(),
           title: "Play with cc",
           completed: false,
         },
         {
-          id: 3,
+          id: v4(),
           title: "Eat dinner",
           completed: false,
         },
@@ -59,6 +62,16 @@ class App extends Component {
       }),
     });
   };
+  addTodo(title) {
+    console.log(title)
+    const newTodo = {
+      id: v4(),
+      title: title,
+      completed: false,
+    };
+    // ... : 扩展运算符 合并数组 / 将字符串转为真正的数组
+    this.setState({ todos: [...this.state.todos, newTodo] });
+  }
 
   render() {
     console.log(this.state.todos);
@@ -73,7 +86,8 @@ class App extends Component {
           {/* 创建 todo list */}
           {/* 将 this.state.todos 作为参数传到 Todo class 中， Todo class 中即可使用 this.props 指代 this.state */}
           <Todos todos={this.state.todos} markComplete={this.markComplete} />
-          <Button type="primary">test butten</Button>
+          <AddTodo addTodo={this.addTodo.bind(this)} />
+
           {/* 创建可评论可显示评论的部分 comment */}
           <div className="wrapper">
             <CommentInput onSubmit={this.submitContent.bind(this)} />
