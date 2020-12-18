@@ -9,6 +9,7 @@ export class AddTodo extends Component {
     };
   }
 
+  // submit form
   onSubmit(e) {
     e.preventDefault();
     // pass parameter to upper
@@ -20,6 +21,7 @@ export class AddTodo extends Component {
     this.setState({ title: "" });
   }
 
+  // add new todo item
   newTodo(e) {
     this.setState({
       [e.target.name]: e.target.value,
