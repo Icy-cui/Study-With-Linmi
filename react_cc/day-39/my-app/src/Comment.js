@@ -1,10 +1,18 @@
 // Comments.js -- 只负责每条评论的具体显示
 import React, { Component } from "react";
-import { Card } from "antd";
+import { Space, Card } from "antd";
 // LikeButton block
 import LikeButton from "./LikeButton";
+import propTypes from "prop-types";
 
 class Comment extends Component {
+
+  delComment(){
+    if (this.props.delComment) {
+      this.props.delComment(this.props.index)
+    }
+  }
+
   render() {
     console.log(this.props.comment);
     return (
@@ -16,12 +24,24 @@ class Comment extends Component {
           {/* <LikeButton wordings={{likedText: '已赞', unlikedText: '赞'}} /> */}
 
           {/* 2. 如果不给 wordings 传参，则使用默认的参数 */}
+          <Space direction="horizontal">
           <LikeButton />
+          <span onClick={this.delComment.bind(this)} className='comment-delete' style={{color: '#cccccc'}}>
+          delete
+          </span>
+          </Space>
         </Card>
         <br />
       </div>
     );
   }
 }
+
+Comment.propTypes = {
+  comment: propTypes.object.isRequired,
+  delComment: propTypes.func,
+  index: propTypes.number
+}
+
 
 export default Comment;
