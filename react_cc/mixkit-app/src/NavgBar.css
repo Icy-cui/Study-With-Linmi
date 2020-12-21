@@ -1,0 +1,19 @@
+a.navbar-brand {
+    padding: 0px 0px 0px 10px;
+    width: 206;
+    height: 108;
+}
+
+#Navbar-1st nav.navbar {
+    padding: 30px 35px
+}
+
+a.nav-link {
+    padding: 4px 0px 0px;
+    margin: 0px 25px
+}
+
+div.navbar-collapse.collapse {
+    padding: 0px 0px 0px 10px;
+    margin: 0px 25px
+}

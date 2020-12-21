@@ -1,27 +1,30 @@
 import React, { Component } from "react";
+import './NavgBar.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Navbar, Nav,  NavDropdown, Form, FormControl, Button} from "react-bootstrap";
+import { Navbar, Nav, Form, FormControl, Button} from "react-bootstrap";
 
 export class NavgBar extends Component {
   render() {
     return (
-      <div>
-        <Navbar bg="light" expand="lg">
-          <Navbar.Brand href="#">React-Bootstrap</Navbar.Brand>
+      <div id= 'Navbar-1st'>
+        <Navbar bg="light" expand="lg" >
+          <Navbar.Brand href="#">中文站</Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
-          <Navbar.Collapse id="basic-navbar-nav">
-          <Form inline>
+          <Form inline className="ml-2 mr-sm-2">
               <FormControl
                 type="text"
-                placeholder="Search"
+                placeholder="Type..."
                 className="ml-2 mr-sm-2"
               />
-              <Button variant="outline-success">Search</Button>
+              <Button variant="outline-primary">Search</Button>{' '}
             </Form>
-            <Nav className="ml-auto mr-auto">
-              <Nav.Link href="#">Home</Nav.Link>
-              <Nav.Link href="#">Link</Nav.Link>
-              <NavDropdown title="Dropdown" id="basic-nav-dropdown">
+
+          <Navbar.Collapse id="basic-navbar-nav">
+            <Nav className="ml-auto mr-5">
+              <Nav.Link href="#">Video</Nav.Link>
+              <Nav.Link href="#">Music</Nav.Link>
+              <Nav.Link href="#">Sound Effects</Nav.Link>
+              {/* <NavDropdown title="Dropdown" id="basic-nav-dropdown">
                 <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
                 <NavDropdown.Item href="#action/3.2">
                   Another action
@@ -33,7 +36,7 @@ export class NavgBar extends Component {
                 <NavDropdown.Item href="#action/3.4">
                   Separated link
                 </NavDropdown.Item>
-              </NavDropdown>
+              </NavDropdown> */}
             </Nav>
           </Navbar.Collapse>
         </Navbar>
