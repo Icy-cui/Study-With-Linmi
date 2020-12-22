@@ -20,7 +20,7 @@ class Clock2 extends Component {
   }
 
   componentWillUnmount() {
-    console.log('componentDidMount');
+    console.log('componentWillUnmount');
     clearInterval(this.timer);
   }
 
