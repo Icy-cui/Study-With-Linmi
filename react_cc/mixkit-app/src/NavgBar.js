@@ -8,7 +8,7 @@ export class NavgBar extends Component {
     return (
       <div id= 'Navbar-1st'>
         <Navbar bg="light" expand="lg" >
-          <Navbar.Brand href="#">中文站</Navbar.Brand>
+          <Navbar.Brand href="#">咕咕</Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Form inline className="ml-2 mr-sm-2">
               <FormControl

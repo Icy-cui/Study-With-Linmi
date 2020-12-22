@@ -11,48 +11,48 @@ export class Selection extends Component {
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="mr-10">
               <NavDropdown title="Genre"  id="Navbar-2nd-text">
-                <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
+                <NavDropdown.Item href="#action/3.1">Pop</NavDropdown.Item>
                 <NavDropdown.Item href="#action/3.2">
-                  Genre
+                  Rock
                 </NavDropdown.Item>
                 <NavDropdown.Item href="#action/3.3">
-                  Mood
+                  Jazz
                 </NavDropdown.Item>
                 <NavDropdown.Divider />
                 <NavDropdown.Item href="#action/3.4">
-                  Tag
+                  Classical
                 </NavDropdown.Item>
               </NavDropdown>
             </Nav>
 
             <Nav className="mr-10">
               <NavDropdown title="Mood" id="Navbar-2nd-text">
-                <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
+                <NavDropdown.Item href="#action/3.1">Happy</NavDropdown.Item>
                 <NavDropdown.Item href="#action/3.2">
-                  Another action
+                  Sad
                 </NavDropdown.Item>
                 <NavDropdown.Item href="#action/3.3">
-                  Something
+                  Mellow
                 </NavDropdown.Item>
                 <NavDropdown.Divider />
                 <NavDropdown.Item href="#action/3.4">
-                  Separated link
+                  Smooth
                 </NavDropdown.Item>
               </NavDropdown>
             </Nav>
 
             <Nav className="mr-10">
               <NavDropdown title="Tag" id="Navbar-2nd-text">
-                <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
+                <NavDropdown.Item href="#action/3.1">Dance</NavDropdown.Item>
                 <NavDropdown.Item href="#action/3.2">
-                  Another action
+                  Synth
                 </NavDropdown.Item>
                 <NavDropdown.Item href="#action/3.3">
-                  Something
+                  Soul
                 </NavDropdown.Item>
                 <NavDropdown.Divider />
                 <NavDropdown.Item href="#action/3.4">
-                  Separated link
+                  Gym
                 </NavDropdown.Item>
               </NavDropdown>
             </Nav>

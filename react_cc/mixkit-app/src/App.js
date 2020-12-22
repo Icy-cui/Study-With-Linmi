@@ -1,15 +1,26 @@
-import logo from "./logo.svg";
 import "./App.css";
 import NavgBar from "./NavgBar";
-import Selection from './Selection'
+import Selection from "./Selection";
+import ContentMain from "./ContentMain";
+
+import { Layout} from "antd";
+const { Header, Content, Footer } = Layout;
+
 
 function App() {
   return (
     <div className="App">
-      
-      <NavgBar />
-      <Selection/>
-      
+      <Layout className="layout">
+        <Header>
+          <NavgBar />
+          <Selection />
+        </Header>
+        <br/>
+        <Content>
+          <ContentMain />
+        </Content>
+        <Footer style={{ textAlign: "center" }}>cc ©2020 Created by cc</Footer>
+      </Layout>
     </div>
   );
 }
