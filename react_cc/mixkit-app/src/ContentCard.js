@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { Card, Button, Image } from "react-bootstrap";
-import imgURL from "./download-2.png";
-import playURL from "./play.png";
+import audioUrl1 from './test-music1.mp3';
 
 export class ContentCard extends Component {
   clickPlay() {
@@ -19,19 +18,13 @@ export class ContentCard extends Component {
             src="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png"
           />
           <Card.Body>
-            <Card.Title>Tech House vibes</Card.Title>
+            <Card.Title>{this.props.info.name}</Card.Title>
             <Card.Text style={{ color: "gray" }}>
-              by Alejandro Magaña (A. M.)
+              by {this.props.info.author}
             </Card.Text>
-            <Image
-              className="mr-4"
-              src={playURL}
-              onClick={this.clickPlay.bind(this)}
-            />
-            <Image
-              src={imgURL}
-              onClick={this.clickDownload.bind(this)}
-            />
+            <audio id="music1" controls='controls' src={this.props.info.audioUrl}/>
+            {/* <Card.Link href={audioUrl} className='mr-2'>⏯ Play / Stop</Card.Link> */}
+            <Card.Link href='https://assets.mixkit.co/music/download/mixkit-tech-house-vibes-130.mp3'>Download</Card.Link>
           </Card.Body>
         </Card>
       </div>
