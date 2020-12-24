@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { Card, Button, Image } from "react-bootstrap";
-import audioUrl1 from './test-music1.mp3';
 
 export class ContentCard extends Component {
   clickPlay() {
