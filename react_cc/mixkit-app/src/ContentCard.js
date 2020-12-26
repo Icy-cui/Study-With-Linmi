@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Card, Button, Image } from "react-bootstrap";
+import { Card, Badge, Dropdown } from "react-bootstrap";
 
 export class ContentCard extends Component {
   clickPlay() {
@@ -9,6 +9,7 @@ export class ContentCard extends Component {
     console.log(2);
   }
   render() {
+    let info = this.props.info;
     return (
       <div style={{ height: "395", width: "230", margin: "20px 0px 0px 0px" }}>
         <Card style={{ width: "21rem" }}>
@@ -17,13 +18,34 @@ export class ContentCard extends Component {
             src="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png"
           />
           <Card.Body>
-            <Card.Title>{this.props.info.name}</Card.Title>
+            <Card.Title>{info.name}</Card.Title>
             <Card.Text style={{ color: "gray" }}>
-              by {this.props.info.author}
+              by {info.author}
             </Card.Text>
-            <audio id="music1" controls='controls' src={this.props.info.audioUrl}/>
+            <audio
+              id="music1"
+              controls="controls"
+              src={info.audioUrl}
+            />
             {/* <Card.Link href={audioUrl} className='mr-2'>⏯ Play / Stop</Card.Link> */}
-            <Card.Link href='https://assets.mixkit.co/music/download/mixkit-tech-house-vibes-130.mp3'>Download</Card.Link>
+            <Card.Link href="https://assets.mixkit.co/music/download/mixkit-tech-house-vibes-130.mp3">
+              Download
+            </Card.Link>
+            <Dropdown.Divider />
+            {info.genre.map((each, i) => {
+              return (
+                <Badge pill variant="light" key={i} onClick={this.clickPlay}>
+                  {each}
+                </Badge>
+              );
+            })}
+            {info.mood.map((each, i) => {
+              return (
+                <Badge pill variant="light" key={i} onClick={this.clickDownload}>
+                  {each}
+                </Badge>
+              );
+            })}
           </Card.Body>
         </Card>
       </div>

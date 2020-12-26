@@ -25,33 +25,47 @@ export class ContentMain extends Component {
         name: "Tech House vibes",
         author: "Alejandro Magaña (A. M.)",
         audioUrl: audioUrl1,
+        genre: ["House & Electronic"],
+        mood: ["Mellow", "Smooth"]
       },
       {
         id: 2,
         name: "Hazy After Hours",
         author: "Alejandro Magaña (A. M.)",
         audioUrl: audioUrl2,
+        genre: ["House & Electronic"],
+        mood: ["House", "Uplifting"]
       },
       { id: 3, 
         name: "Hip Hop 02", 
         author: "Lily. J", 
-        audioUrl: audioUrl3 },
+        audioUrl: audioUrl3 ,
+        genre: ["Experimental"],
+        mood: ["Calm", "Smooth"]
+      },
       {
         id: 4,
         name: "Tech House vibes",
         author: "Alejandro Magaña (A. M.)",
         audioUrl: audioUrl1,
+        genre: ["House & Electronic"],
+        mood: ["Mellow", "Smooth"]
       },
       {
         id: 5,
         name: "Hazy After Hours",
         author: "Alejandro Magaña (A. M.)",
         audioUrl: audioUrl2,
+        genre: ["House & Electronic"],
+        mood: ["House", "Uplifting"]
       },
       { id: 6, 
         name: "Hip Hop 02", 
         author: "Lily. J", 
-        audioUrl: audioUrl3 },
+        audioUrl: audioUrl3 ,
+        genre: ["Experimental"],
+        mood: ["Calm", "Smooth"]
+      },
     ];
 
     let splitMusicGroup = this.checkMusicLen(musics);
