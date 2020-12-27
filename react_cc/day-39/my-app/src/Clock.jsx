@@ -10,17 +10,27 @@ class Clock2 extends Component {
     super(props);
     // 这里是唯一一处直接复制给this.state的，其他地方请用this.setState({...})
     // 建议是：跟render相关的东西放在state里面，不相关的放外面
-    this.state = {time: new Date().toLocaleTimeString(),}
+    this.state = {
+      time: new Date().toLocaleTimeString()
+    };
+    console.log('constructor')
   }
-  componentDidMount(){
-    console.log('componentDidMount');
-    this.timer = setInterval(()=>{
-      this.setState({time: new Date().toLocaleTimeString(),})
-    })
+
+  componentDidMount() {
+    /**
+     * 组件挂载完成以后，也就是 DOM 元素已经插入页面后调用
+     */
+    console.log("componentDidMount");
+    this.timer = setInterval(() => {
+      this.setState({ time: new Date().toLocaleTimeString() });
+    });
   }
 
   componentWillUnmount() {
-    console.log('componentWillUnmount');
+    /**
+     * 组件对应的 DOM 元素从页面中删除之前调用
+     */
+    console.log("componentWillUnmount");
     clearInterval(this.timer);
   }
 
