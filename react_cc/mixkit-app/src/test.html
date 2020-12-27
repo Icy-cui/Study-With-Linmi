@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+</head>
+
+<body>
+    <audio id="snd" preload src="test-music1.mp3"></audio>
+    <canvas id="canvas" style="position: absolute; left: 100px; top: 100px" width="1000" height="256"></canvas>
+    <button id="btn" style="position: absolute; left: 0; top: 0">begin</button>
+    <script type="text/javascript">
+        // 首先获取各个对象
+        var AudioContext = AudioContext || webkitAudioContext;
+        var audio = document.getElementById("snd"); //加载音频源有很多种方式，可以用file加载本地音乐，可以用ajax，这里就简单的用audio标签
+        var canvas = document.getElementById("canvas");
+        var ctx = canvas.getContext("2d");
+        // 用一个按钮来触发音乐播放（因为谷歌浏览器的最新安全策略）
+        document.getElementById("btn").onmousedown = function() {
+            this.style.display = "none";
+            // 创建音频上下文
+            var atx = new AudioContext();
+            // 创建音源
+            var source = atx.createMediaElementSource(audio);
+            // 创建解析器
+            var analyser = atx.createAnalyser();
+            // 连接：音源 ==> 解析器 ==> 最终输出
+            // 直接连接音源和最终输出（比如扬声器）就可以播放声音，中间连接各种效果节点可以实现音频的各种增益，这里要实现音频可视化，就需要一个解析器
+            source.connect(analyser);
+            analyser.connect(atx.destination);
+            // fftSize 属性的值必须是从32到32768范围内的2的非零幂; 其默认值为2048.
+            // 这个值越大，图形就越详细
+            analyser.fftSize = 2048;
+
+            function draw() {
+                var cWidth = canvas.width,
+                    cHeight = canvas.height,
+                    // frequencyBinCount的值固定为fftSize的一半
+                    audioArray = new Uint8Array(analyser.frequencyBinCount);
+                // 解析频率数据，放入audioArray数组中
+                analyser.getByteFrequencyData(audioArray);
+                // 填充为柱状图
+                ctx.clearRect(0, 0, cWidth, cHeight);
+                for (var i = 0; i < audioArray.length; i++) {
+                    ctx.fillRect(i * 3, cHeight - audioArray[i], 2, cHeight);
+                }
+                // 刷新
+                requestAnimationFrame(draw);
+            }
+            draw();
+            audio.play();
+        };
+    </script>
+</body>
+
+</html>

@@ -19,7 +19,8 @@ function App() {
         <Content>
           <ContentMain />
         </Content>
-        <Footer style={{ textAlign: "center" }}>cc ©2020 Created by cc</Footer>
+        <br/>
+        <Footer style={{ textAlign: "center", color:'gray' }}>cc ©2020 Created by cc</Footer>
       </Layout>
     </div>
   );

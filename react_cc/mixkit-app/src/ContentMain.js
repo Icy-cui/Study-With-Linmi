@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import ContentCard from "./ContentCard";
 import { Container, Row, Col } from "react-bootstrap";
 
+import Waveform from './WaveForm'
+
 import audioUrl1 from "./test-music1.mp3";
 import audioUrl2 from "./test-music2.mp3";
 import audioUrl3 from "./test-music3.mp3";
@@ -73,6 +75,7 @@ export class ContentMain extends Component {
     return (
       <div>
         <Container>
+        <Waveform style={{ width: "21rem" }}/>
           {splitMusicGroup.map((eachGroup, i) => {
             return (
               <Row key={i}>
