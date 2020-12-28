@@ -13,6 +13,10 @@ class Comment extends Component {
     }
   }
 
+  componentWillUnmount () {
+    clearInterval(this._timer)
+  }
+
   render() {
     console.log(this.props.comment);
     return (

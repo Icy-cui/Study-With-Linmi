@@ -50,15 +50,46 @@ class App extends Component {
     });
   }
 
+  componentWillMount() {
+    this._loadComments();
+  }
+
+  /**
+   * _loadComments: 在组件开始挂载的时候 显示评论列表数据
+   */
+  _loadComments() {
+    let comments = localStorage.getItem("comments");
+    if (comments) {
+      comments = JSON.parse(comments);
+      this.setState({ comments });
+    }
+  }
+
+  _saveComments(comments) {
+    localStorage.setItem(comments, JSON.stringify(comments));
+  }
+
   submitContent(comment) {
     // console.log(comment);
     // console.log(this.state.comments);
-    this.state.comments.push(comment);
+    if (!comment) return;
+    if (!comment.name) return alert("请输入用户名");
+    if (!comment.comment) return alert("请输入评论内容");
+    const comments = this.state.comments;
+    comments.push(comment);
     this.setState({
-      comments: this.state.comments,
+      comments,
     });
+    this._saveComments(comments);
   }
-  
+
+  handleDeleteComment(index) {
+    const comments = this.state.comments;
+    comments.splice(index, 1);
+    this.setState({ comments });
+    this._saveComments(comments);
+  }
+
   markComplete = (id) => {
     // console.log('pass from todos ', {id})
     this.setState({
@@ -109,7 +140,10 @@ class App extends Component {
           {/* 创建可评论可显示评论的部分 comment */}
           <div className="wrapper">
             <CommentInput onSubmit={this.submitContent.bind(this)} />
-            <CommentList comments={this.state.comments} />
+            <CommentList
+              comments={this.state.comments}
+              onDeleteComment={this.handleDeleteComment.bind(this)}
+            />
           </div>
         </Space>
       </div>
