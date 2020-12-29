@@ -75,7 +75,6 @@ export class ContentMain extends Component {
     return (
       <div>
         <Container>
-        <Waveform style={{ width: "21rem" }}/>
           {splitMusicGroup.map((eachGroup, i) => {
             return (
               <Row key={i}>
@@ -87,6 +86,7 @@ export class ContentMain extends Component {
               </Row>
             );
           })}
+        <Waveform style={{ width: "21rem" }}/>
         </Container>
       </div>
     );
