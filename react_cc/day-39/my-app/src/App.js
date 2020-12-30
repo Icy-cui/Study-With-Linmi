@@ -13,6 +13,7 @@ import CommentInput from "./CommentInput";
 import CommentList from "./CommentList";
 // id
 import { v4 } from "uuid";
+import store from "./store/index";
 
 const ComponentA = function (props) {
   return <h1>Welcome {props.name}, create your today's TODO list!</h1>;
@@ -21,27 +22,7 @@ const ComponentA = function (props) {
 class App extends Component {
   constructor() {
     super();
-    this.state = {
-      isShowClock: true,
-      comments: [],
-      todos: [
-        {
-          id: v4(),
-          title: "Go out",
-          completed: false,
-        },
-        {
-          id: v4(),
-          title: "Play with cc",
-          completed: false,
-        },
-        {
-          id: v4(),
-          title: "Eat dinner",
-          completed: false,
-        },
-      ],
-    };
+    this.state = store.getState()
   }
 
   handleShowOrHide() {
