@@ -1,13 +1,12 @@
-import { Code } from './style.js';
+import { Body} from './style.js';
+import Header from './common/header/Header'
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <p>
-          Edit <Code>src/App.js</Code> and save to reload.
-        </p>
-      </header>
+      <Header className="App-header"/>
+        <Body>
+        </Body>
     </div>
   );
 }
