@@ -20,8 +20,8 @@ const Nav = styled.div `
   margin: 0 auto;
   height: 100%;
   width: 900px;
-  padding-left:50px;
-  padding-right:170px;
+  padding-left: 50px;
+  padding-right: 170px;
   boxing-sizing: border-box;
 `;
 
@@ -42,6 +42,11 @@ const NavItem = styled.div `
   }
 `;
 
+const SearchWapper = styled.div `
+  position: relative;
+  float: left;
+`;
+
 const NavSearch = styled.input.attrs({
     placeholder: "search",
 })
@@ -49,7 +54,22 @@ const NavSearch = styled.input.attrs({
   &:: placeholder {
     color: #999;
   }
-  width: 160px;
+  &.focused {
+    width: 200px;
+  }
+  &.slide-enter {
+    transition: all 0.2s ease-out;
+  }
+  &.slide-enter-active {
+    width: 200pxpx;
+  }
+  &.slide-exit {
+    transition: all 0.2s ease-out;
+  }
+  &.slide-exit-active {
+    width: 140px;
+  }
+  width: 140px;
   height: 38px;
   padding: 0 30px 0 20px;
   margin-top: 9px;
@@ -61,7 +81,7 @@ const NavSearch = styled.input.attrs({
   border-radius: 19px;
   background: #eee;
   font-size: 14px;
-  color:#666;
+  color: #666;
 `;
 
 const Addition = styled.div `
@@ -79,8 +99,13 @@ const NavButton = styled.div `
   line-height: 38px;
   border-radius: 19px;
   border: 1px solid #ec6149;
-  font-size:14px;
-  &.reg  {color: #ec6149;};
-  &.writting  {color: #fff; background: #ec6149};
+  font-size: 14px;
+  &.reg {
+    color: #ec6149;
+  }
+  &.writting {
+    color: #fff;
+    background: #ec6149;
+  }
 `;
-export { HeaderWapper, Logo, Nav, NavItem, NavSearch, NavButton, Addition };
+export { HeaderWapper, Logo, Nav, NavItem, NavSearch, NavButton, Addition, SearchWapper };
