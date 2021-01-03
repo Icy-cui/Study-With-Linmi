@@ -6,6 +6,7 @@ const HeaderWapper = styled.div `
   height: 56px;
   border-bottom: 1px solid #f0f0f0;
 `;
+
 const Logo = styled.a `
   position: absolute;
   top: 0;
@@ -16,6 +17,7 @@ const Logo = styled.a `
   background: url(${logoPic});
   background-size: contain;
 `;
+
 const Nav = styled.div `
   margin: 0 auto;
   height: 100%;
@@ -84,6 +86,45 @@ const NavSearch = styled.input.attrs({
   color: #666;
 `;
 
+const SearchInfo = styled.div `
+  position: absolute;
+  left: 0;
+  top: 56px;
+  width: 240px;
+  padding: 0 20px;
+  box-shadow: 0 0 8px rgb(0, 0, 0, 0.2);
+`;
+
+const SearchInfoTitle = styled.div `
+  margin-top: 20px;
+  margin-bottom: 15px;
+  line-height: 20px;
+  font-size: 14px;
+  color: #969696;
+`;
+const SearchInfoSwitch = styled.span `
+  float: right;
+  font-size: 13px;
+  color: #969696;
+`;
+
+const SearchInfoItem = styled.a `
+  display: block;
+  float: left;
+  margin-right: 10px;
+  margin-bottom: 13px;
+  line-height: 20px;
+  padding: 0 5px;
+  font-size: 12px;
+  border: 1px solid #ddd;
+  color: #787878;
+  border-radius: 3px;
+`;
+
+const SearchInfoList = styled.div `
+  overflow: hidden;
+`
+
 const Addition = styled.div `
   position: absolute;
   right: 0;
@@ -108,4 +149,19 @@ const NavButton = styled.div `
     background: #ec6149;
   }
 `;
-export { HeaderWapper, Logo, Nav, NavItem, NavSearch, NavButton, Addition, SearchWapper };
+
+export {
+    HeaderWapper,
+    Logo,
+    Nav,
+    NavItem,
+    NavSearch,
+    NavButton,
+    Addition,
+    SearchWapper,
+    SearchInfo,
+    SearchInfoTitle,
+    SearchInfoSwitch,
+    SearchInfoItem,
+    SearchInfoList
+};

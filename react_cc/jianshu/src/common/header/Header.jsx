@@ -1,6 +1,7 @@
 import React, { Component } from "react";
+import { actionCreators } from "./store/index";
 //redux
-import {connect} from 'react-redux';
+import { connect } from "react-redux";
 // 动画效果库
 import { CSSTransition } from "react-transition-group";
 import {
@@ -12,11 +13,38 @@ import {
   NavButton,
   Addition,
   SearchWapper,
+  SearchInfo,
+  SearchInfoTitle,
+  SearchInfoSwitch,
+  SearchInfoItem,
+  SearchInfoList,
 } from "./style";
 
-import  {actionCreators} from './store/index';
-
 export class Header extends Component {
+  getListArea(show) {
+    if (show) {
+      return (
+        <SearchInfo>
+          <SearchInfoTitle>
+            热门搜索
+            <SearchInfoSwitch>换一换</SearchInfoSwitch>
+          </SearchInfoTitle>
+          <SearchInfoList>
+            <SearchInfoItem>生活</SearchInfoItem>
+            <SearchInfoItem>学习</SearchInfoItem>
+            <SearchInfoItem>工作</SearchInfoItem>
+            <SearchInfoItem>工作</SearchInfoItem>
+            <SearchInfoItem>工作</SearchInfoItem>
+            <SearchInfoItem>工作</SearchInfoItem>
+            <SearchInfoItem>工作</SearchInfoItem>
+          </SearchInfoList>
+        </SearchInfo>
+      );
+    } else {
+      return;
+    }
+  }
+
   render() {
     return (
       <HeaderWapper>
@@ -39,6 +67,7 @@ export class Header extends Component {
                 onBlur={this.props.handleInputBlur}
               ></NavSearch>
             </CSSTransition>
+            {this.getListArea(this.props.focused)}
           </SearchWapper>
         </Nav>
         <Addition>
@@ -51,28 +80,26 @@ export class Header extends Component {
 }
 
 // 组件和store做连接时，state 如何映射到 props
-const mapStateToProps=(state)=>{
-    // state 是 store中的所有数据，这样就可以在当前代码中使用 this.props.
-    return {
-        focused: state.header.focused
-    };
-
-}
+const mapStateToProps = (state) => {
+  // state 是 store中的所有数据，这样就可以在当前代码中使用 this.props.
+  return {
+    focused: state.getIn(["header", "focused"]),
+  };
+};
 
 // 组件要改变store中的内容要调用 dispatch 方法
-const mapDispatchToProps=(dispatch)=>{
-    // dispatch 就是 store 的 dispatch 方法：传递action到store中去
-    return {
-        handleInputFocus(){
-            const action = actionCreators.searchFocus();
-            dispatch(action)
-        },
-        handleInputBlur(){
-            const action = actionCreators.searchBlur();
-            dispatch(action)
-        }
-    };
-}
-
+const mapDispatchToProps = (dispatch) => {
+  // dispatch 就是 store 的 dispatch 方法：传递action到store中去
+  return {
+    handleInputFocus() {
+      const action = actionCreators.searchFocus();
+      dispatch(action);
+    },
+    handleInputBlur() {
+      const action = actionCreators.searchBlur();
+      dispatch(action);
+    },
+  };
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(Header);
