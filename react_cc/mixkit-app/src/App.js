@@ -1,5 +1,5 @@
 import "./App.css";
-import NavgBar from "./NavgBar";
+import NavgBar from "./common/header/NavBar";
 import Selection from "./Selection";
 import ContentMain from "./ContentMain";
 
