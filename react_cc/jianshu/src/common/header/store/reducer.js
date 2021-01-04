@@ -4,7 +4,10 @@ import { fromJS } from 'immutable'
 const defaultState = fromJS({
     focused: false,
     // immutable array
-    list: []
+    list: [],
+    // 换一换 page
+    page: 1,
+    totalPage: 1
 });
 
 // eslint-disable-next-line import/no-anonymous-default-export

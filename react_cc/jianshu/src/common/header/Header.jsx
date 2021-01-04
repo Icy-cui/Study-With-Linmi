@@ -22,7 +22,8 @@ import {
 
 export class Header extends Component {
   getListArea() {
-    if (this.props.focused) {
+    const {focused, list} = this.props
+    if (focused) {
       return (
         <SearchInfo>
           <SearchInfoTitle>
@@ -30,7 +31,7 @@ export class Header extends Component {
             <SearchInfoSwitch>换一换</SearchInfoSwitch>
           </SearchInfoTitle>
           <SearchInfoList>
-            {this.props.list.map( (item)=>{
+            {list.map( (item)=>{
                 return <SearchInfoItem key={item}>{item}</SearchInfoItem>
             })}
           </SearchInfoList>
@@ -42,6 +43,7 @@ export class Header extends Component {
   }
 
   render() {
+    const {focused} = this.props
     return (
       <HeaderWapper>
         <Logo href="/" />
@@ -50,15 +52,14 @@ export class Header extends Component {
           <NavItem className="left-navitem">下载App</NavItem>
           <NavItem className="right-navitem">登录</NavItem>
           <NavItem className="right-navitem">Aa</NavItem>
-
           <SearchWapper>
             <CSSTransition
-              in={this.props.focused}
+              in={focused}
               timeout={200}
               classNames="slide"
             >
               <NavSearch
-                className={this.props.focused ? "focused" : ""}
+                className={focused ? "focused" : ""}
                 onFocus={this.props.handleInputFocus}
                 onBlur={this.props.handleInputBlur}
               ></NavSearch>
