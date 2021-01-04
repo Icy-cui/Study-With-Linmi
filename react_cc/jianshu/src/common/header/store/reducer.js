@@ -3,6 +3,7 @@ import { fromJS } from 'immutable'
 
 const defaultState = fromJS({
     focused: false,
+    // immutable array
     list: []
 });
 
@@ -22,6 +23,9 @@ export default (state = defaultState, action) => {
                 // return {
                 //     focused: false,
                 // };
+        case constants.CHANGE_LIST:
+            return state.set('list', action.data)
+
         default:
             console.log("No " + action.type + " found.");
             break;

@@ -21,8 +21,8 @@ import {
 } from "./style";
 
 export class Header extends Component {
-  getListArea(show) {
-    if (show) {
+  getListArea() {
+    if (this.props.focused) {
       return (
         <SearchInfo>
           <SearchInfoTitle>
@@ -30,13 +30,9 @@ export class Header extends Component {
             <SearchInfoSwitch>换一换</SearchInfoSwitch>
           </SearchInfoTitle>
           <SearchInfoList>
-            <SearchInfoItem>生活</SearchInfoItem>
-            <SearchInfoItem>学习</SearchInfoItem>
-            <SearchInfoItem>工作</SearchInfoItem>
-            <SearchInfoItem>工作</SearchInfoItem>
-            <SearchInfoItem>工作</SearchInfoItem>
-            <SearchInfoItem>工作</SearchInfoItem>
-            <SearchInfoItem>工作</SearchInfoItem>
+            {this.props.list.map( (item)=>{
+                return <SearchInfoItem key={item}>{item}</SearchInfoItem>
+            })}
           </SearchInfoList>
         </SearchInfo>
       );
@@ -67,7 +63,7 @@ export class Header extends Component {
                 onBlur={this.props.handleInputBlur}
               ></NavSearch>
             </CSSTransition>
-            {this.getListArea(this.props.focused)}
+            {this.getListArea()}
           </SearchWapper>
         </Nav>
         <Addition>
@@ -84,6 +80,7 @@ const mapStateToProps = (state) => {
   // state 是 store中的所有数据，这样就可以在当前代码中使用 this.props.
   return {
     focused: state.getIn(["header", "focused"]),
+    list: state.getIn(["header", "list"]),
   };
 };
 
@@ -92,12 +89,11 @@ const mapDispatchToProps = (dispatch) => {
   // dispatch 就是 store 的 dispatch 方法：传递action到store中去
   return {
     handleInputFocus() {
-      const action = actionCreators.searchFocus();
-      dispatch(action);
+      dispatch(actionCreators.getList());
+      dispatch(actionCreators.searchFocus());
     },
     handleInputBlur() {
-      const action = actionCreators.searchBlur();
-      dispatch(action);
+      dispatch(actionCreators.searchBlur());
     },
   };
 };
