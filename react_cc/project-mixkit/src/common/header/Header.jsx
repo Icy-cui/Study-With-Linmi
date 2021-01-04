@@ -96,12 +96,15 @@ const mapDispatchToProps = (dispatch) => {
   // dispatch 就是 store 的 dispatch 方法：传递action到store中去
   return {
     handleInputFocus() {
-      const action = actionCreators.searchFocus();
-      dispatch(action);
+      // get list (related to thunk)
+      dispatch(actionCreators.getList());
+      // search focus
+      dispatch(actionCreators.searchFocus());
+      
     },
     handleInputBlur() {
-      const action = actionCreators.searchBlur();
-      dispatch(action);
+      // search blur
+      dispatch(actionCreators.searchBlur());
     },
   };
 };
