@@ -22,19 +22,35 @@ import {
 
 export class Header extends Component {
   getListArea() {
-    const {focused, list} = this.props
-    if (focused) {
+    const { focused, list, page, totalPage, mouseIn } = this.props;
+
+    const newList = list.toJS(list);
+    const pageList = [];
+    if (newList.length) {
+      // 按照每十条显示
+      for (let i = (page - 1) * 10; i < page * 10; i++) {
+        // console.log(newList[i]);
+        pageList.push(
+          <SearchInfoItem key={newList[i]}>{newList[i]}</SearchInfoItem>
+        );
+      }
+    }
+
+    if (focused || mouseIn) {
       return (
-        <SearchInfo>
+        <SearchInfo
+          onMouseEnter={this.props.handleMouseEnter}
+          onMouseLeave={this.props.handleMouseLeave}
+        >
           <SearchInfoTitle>
             热门搜索
-            <SearchInfoSwitch>换一换</SearchInfoSwitch>
+            <SearchInfoSwitch
+              onClick={() => this.props.handlePageChange(page, totalPage)}
+            >
+              换一换
+            </SearchInfoSwitch>
           </SearchInfoTitle>
-          <SearchInfoList>
-            {list.map( (item)=>{
-                return <SearchInfoItem key={item}>{item}</SearchInfoItem>
-            })}
-          </SearchInfoList>
+          <SearchInfoList>{pageList}</SearchInfoList>
         </SearchInfo>
       );
     } else {
@@ -43,7 +59,7 @@ export class Header extends Component {
   }
 
   render() {
-    const {focused} = this.props
+    const { focused } = this.props;
     return (
       <HeaderWapper>
         <Logo href="/" />
@@ -53,11 +69,7 @@ export class Header extends Component {
           <NavItem className="right-navitem">登录</NavItem>
           <NavItem className="right-navitem">Aa</NavItem>
           <SearchWapper>
-            <CSSTransition
-              in={focused}
-              timeout={200}
-              classNames="slide"
-            >
+            <CSSTransition in={focused} timeout={200} classNames="slide">
               <NavSearch
                 className={focused ? "focused" : ""}
                 onFocus={this.props.handleInputFocus}
@@ -82,6 +94,9 @@ const mapStateToProps = (state) => {
   return {
     focused: state.getIn(["header", "focused"]),
     list: state.getIn(["header", "list"]),
+    page: state.getIn(["header", "page"]),
+    totalPage: state.getIn(["header", "totalPage"]),
+    mouseIn: state.getIn(["header", "mouseIn"]),
   };
 };
 
@@ -95,6 +110,20 @@ const mapDispatchToProps = (dispatch) => {
     },
     handleInputBlur() {
       dispatch(actionCreators.searchBlur());
+    },
+    handleMouseEnter() {
+      dispatch(actionCreators.mouseEnter());
+    },
+    handleMouseLeave() {
+      dispatch(actionCreators.mouseLeave());
+    },
+    handlePageChange(page, totalPage) {
+      // console.log(page, totalPage);
+      if (page < totalPage) {
+        dispatch(actionCreators.changePage(page + 1));
+      } else {
+        dispatch(actionCreators.changePage(1));
+      }
     },
   };
 };

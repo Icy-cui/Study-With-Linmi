@@ -10,10 +10,11 @@ export const searchBlur = () => ({
     type: constants.SEARCH_BLUR
 });
 
-const changeList=(data)=>({
+const changeList = (data) => ({
     type: constants.CHANGE_LIST,
     // change json array to immutable array
-    data: fromJS(data)
+    data: fromJS(data),
+    totalPage: Math.ceil(data.length / 10)
 });
 
 export const getList = () => {
@@ -24,3 +25,16 @@ export const getList = () => {
         }).catch(() => { console.log('error') })
     }
 };
+
+export const mouseEnter = () => ({
+    type: constants.MOUSE_ENTER
+})
+
+export const mouseLeave = () => ({
+    type: constants.MOUSE_LEAVE
+})
+
+export const changePage = (page) => ({
+    type: constants.CHANGE_PAGE,
+    page: page
+})
