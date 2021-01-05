@@ -3,8 +3,11 @@ import { fromJS } from 'immutable'
 
 const defaultState = fromJS({
     focused: false,
+    mouseIn: false,
     // immutable array
-    list: []
+    list: [],
+    page: 1,
+    totalPage:1
 });
 
 // eslint-disable-next-line import/no-anonymous-default-export
@@ -23,8 +26,21 @@ export default (state = defaultState, action) => {
                 //     focused: false,
                 // };
         case constants.CHANGE_LIST:
-            return state.set('list', action.data)
+            return state.merge({
+                list: action.data,
+                totalPage: action.totalPage
 
+            })
+
+        case constants.MOUSE_ENTER:
+            return state.set('mouseIn', true)
+
+        case constants.MOUSE_LEAVE:
+            return state.set('mouseIn', false)
+            
+        case constants.CHANGE_PAGE:
+            return state.set('page', action.page)
+        
         default:
             console.log("No " + action.type + " found.");
             break;
