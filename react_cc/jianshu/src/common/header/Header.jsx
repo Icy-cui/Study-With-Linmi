@@ -59,7 +59,7 @@ export class Header extends Component {
   }
 
   render() {
-    const { focused } = this.props;
+    const { focused, list } = this.props;
     return (
       <HeaderWapper>
         <Logo href="/" />
@@ -72,7 +72,7 @@ export class Header extends Component {
             <CSSTransition in={focused} timeout={200} classNames="slide">
               <NavSearch
                 className={focused ? "focused" : ""}
-                onFocus={this.props.handleInputFocus}
+                onFocus={() => this.props.handleInputFocus(list)}
                 onBlur={this.props.handleInputBlur}
               ></NavSearch>
             </CSSTransition>
@@ -104,8 +104,11 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   // dispatch 就是 store 的 dispatch 方法：传递action到store中去
   return {
-    handleInputFocus() {
-      dispatch(actionCreators.getList());
+    handleInputFocus(list) {
+      if (list.size === 0) {
+        dispatch(actionCreators.getList());
+      }
+
       dispatch(actionCreators.searchFocus());
     },
     handleInputBlur() {

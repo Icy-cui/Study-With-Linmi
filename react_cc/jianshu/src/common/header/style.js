@@ -106,6 +106,7 @@ const SearchInfoSwitch = styled.span `
   float: right;
   font-size: 13px;
   color: #969696;
+  cursor: pointer;
 `;
 
 const SearchInfoItem = styled.a `
