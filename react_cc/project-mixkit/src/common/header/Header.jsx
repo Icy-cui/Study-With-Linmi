@@ -58,6 +58,7 @@ export class Header extends Component {
   }
 
   render() {
+    const { focused, list } = this.props;
     return (
       <HeaderWapper>
         <Logo href="/" />
@@ -69,14 +70,10 @@ export class Header extends Component {
           <NavItem className="right-navitem">音效</NavItem>
 
           <SearchWapper>
-            <CSSTransition
-              in={this.props.focused}
-              timeout={200}
-              classNames="slide"
-            >
+            <CSSTransition in={focused} timeout={200} classNames="slide">
               <NavSearch
-                className={this.props.focused ? "focused" : ""}
-                onFocus={this.props.handleInputFocus}
+                className={focused ? "focused" : ""}
+                onFocus={() => this.props.handleInputFocus(list)}
                 onBlur={this.props.handleInputBlur}
               ></NavSearch>
             </CSSTransition>
@@ -108,9 +105,11 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   // dispatch 就是 store 的 dispatch 方法：传递action到store中去
   return {
-    handleInputFocus() {
-      // get list (related to thunk)
-      dispatch(actionCreators.getList());
+    handleInputFocus(list) {
+      if (list.size === 0) {
+        // get list (related to thunk)
+        dispatch(actionCreators.getList());
+      }
       // search focus
       dispatch(actionCreators.searchFocus());
     },
