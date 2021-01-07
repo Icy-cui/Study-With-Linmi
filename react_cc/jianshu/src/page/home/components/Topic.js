@@ -1,13 +1,25 @@
-import React, { Component } from 'react'
+import React, { Component } from "react";
+import { TopicWapper, TopicItem } from "../style";
+import {connect} from 'react-redux'
 
 export class Topic extends Component {
-    render() {
-        return (
-            <div>
-                Topic
-            </div>
-        )
-    }
+  render() {
+    return (
+      <TopicWapper>{this.props.list.map((item)=>{
+          return <TopicItem key={item.get('id')}>{item.get('title')}</TopicItem>
+      })}
+      </TopicWapper>
+    );
+  }
 }
+const mapStateToProps = (state)=>({
+    list: state.getIn(['home', 'topicList'])
+})
 
-export default Topic
+// const mapDispatchToProps = ()=>{
+
+// }
+
+
+
+export default connect(mapStateToProps, null)(Topic);;

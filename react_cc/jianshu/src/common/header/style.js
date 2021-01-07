@@ -93,6 +93,7 @@ const SearchInfo = styled.div `
   width: 240px;
   padding: 0 20px;
   box-shadow: 0 0 8px rgb(0, 0, 0, 0.2);
+  background: #fff;
 `;
 
 const SearchInfoTitle = styled.div `

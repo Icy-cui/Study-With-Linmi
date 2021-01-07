@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { actionCreators } from "./store/index";
-//redux
+//redux: 与最外层的store（数据）进行连接
 import { connect } from "react-redux";
 // 动画效果库
 import { CSSTransition } from "react-transition-group";
@@ -131,4 +131,5 @@ const mapDispatchToProps = (dispatch) => {
   };
 };
 
+//redux: 与最外层的store（数据）进行连接：export的是一个容器组件
 export default connect(mapStateToProps, mapDispatchToProps)(Header);
