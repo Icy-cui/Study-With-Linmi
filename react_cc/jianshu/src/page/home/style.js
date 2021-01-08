@@ -19,7 +19,7 @@ export const HomeLeft = styled.div `
 
 export const HomeRight = styled.div `
   float: right;
-  width: 240px;
+  width: 280px;
 `;
 
 export const TopicWapper = styled.div `
@@ -73,3 +73,25 @@ export const ListInfo = styled.div `
     color: rgb(153, 153, 153);
   }
 `;
+
+export const RmdWapper = styled.div `
+  margin: 30px 0;
+  width: 280px;
+`
+
+export const RmdItem = styled.div `
+  height: 50px;
+  width: 280px;
+  background:url(${(props)=> props.imgUrl});
+  background-size:contain;
+  margin-bottom: 6px;
+`
+
+export const WriteWapper = styled.div `
+  width: 100%;
+  border: 1px solid #dcdcdc;
+  border-radius: 3px;
+  height: 300px;
+  line-height: 300px;
+  text-align: center;
+`

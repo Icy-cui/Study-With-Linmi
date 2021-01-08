@@ -6,6 +6,9 @@ import Recommend from "./components/Recommend";
 import Topic from "./components/Topic";
 import Writer from "./components/Writer";
 
+import axios from "axios";
+import { connect } from "react-redux";
+
 export class Home extends Component {
   render() {
     return (
@@ -26,6 +29,28 @@ export class Home extends Component {
       </HomeWapper>
     );
   }
+
+  // 组件挂载好了以后，发送ajax请求数据
+  componentDidMount() {
+    axios.get("./api/home.json").then((res) => {
+      const result = res.data.data;
+      // console.log(result);
+      const action = {
+        type: "change_home_data",
+        topicList: result.topicList,
+        articleList: result.articleList,
+        recommendList: result.recommendList
+      }
+      this.props.changeHomeData(action);
+    });
+  }
 }
 
-export default Home;
+const mapDispatchToProps=(dispatch)=>({
+  changeHomeData(action){
+      dispatch(action);
+  }
+
+});
+
+export default connect(null, mapDispatchToProps)(Home);

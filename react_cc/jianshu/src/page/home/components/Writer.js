@@ -1,11 +1,13 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import { WriteWapper } from "../style";
 
 export class Writer extends Component {
     render() {
         return (
-            <div>
-                writer
-            </div>
+            <WriteWapper>
+                {/* <WriteItem>
+                </WriteItem> */}
+            </WriteWapper>
         )
     }
 }
