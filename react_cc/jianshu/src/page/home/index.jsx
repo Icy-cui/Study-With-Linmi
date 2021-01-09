@@ -1,12 +1,12 @@
 import React, { Component } from "react";
 import { HomeWapper, HomeLeft, HomeRight } from "./style";
+import {actionCreators} from "./store"
 
 import List from "./components/List";
 import Recommend from "./components/Recommend";
 import Topic from "./components/Topic";
 import Writer from "./components/Writer";
 
-import axios from "axios";
 import { connect } from "react-redux";
 
 export class Home extends Component {
@@ -32,23 +32,13 @@ export class Home extends Component {
 
   // 组件挂载好了以后，发送ajax请求数据
   componentDidMount() {
-    axios.get("./api/home.json").then((res) => {
-      const result = res.data.data;
-      // console.log(result);
-      const action = {
-        type: "change_home_data",
-        topicList: result.topicList,
-        articleList: result.articleList,
-        recommendList: result.recommendList
-      }
-      this.props.changeHomeData(action);
-    });
+    this.props.changeHomeData();
   }
 }
 
 const mapDispatchToProps=(dispatch)=>({
-  changeHomeData(action){
-      dispatch(action);
+  changeHomeData(){
+    dispatch(actionCreators.getHomeInfo());
   }
 
 });

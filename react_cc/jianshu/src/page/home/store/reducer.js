@@ -1,5 +1,6 @@
 // import * as constants from './constants';
 import { fromJS } from "immutable";
+import * as constants from "./constants";
 
 const defaultState = fromJS({
     topicList: [],
@@ -10,7 +11,7 @@ const defaultState = fromJS({
 // eslint-disable-next-line import/no-anonymous-default-export
 export default (state = defaultState, action) => {
     switch (action.type) {
-        case "change_home_data":
+        case constants.CHANGE_HOME_DATA:
             return state.merge({
                 topicList: fromJS(action.topicList),
                 articleList: fromJS(action.articleList),
