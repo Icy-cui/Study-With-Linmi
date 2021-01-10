@@ -20,6 +20,9 @@ import {
   SearchInfoList,
 } from "./style";
 
+// react router
+import { Link } from "react-router-dom";
+
 export class Header extends Component {
   getListArea() {
     const { focused, list, page, totalPage, mouseIn } = this.props;
@@ -62,7 +65,9 @@ export class Header extends Component {
     const { focused, list } = this.props;
     return (
       <HeaderWapper>
-        <Logo href="/" />
+        <Link to="/">
+          <Logo href="/" />
+        </Link>
         <Nav>
           <NavItem className="left-navitem active">Home</NavItem>
           <NavItem className="left-navitem">下载App</NavItem>
