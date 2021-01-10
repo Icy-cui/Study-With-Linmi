@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { PureComponent } from "react";
 import { HomeWapper, HomeLeft, HomeRight, BackTop } from "./style";
 import { actionCreators } from "./store";
 
@@ -9,7 +9,8 @@ import Writer from "./components/Writer";
 
 import { connect } from "react-redux";
 
-export class Home extends Component {
+export class Home extends PureComponent {
+
   handleScrollToTop() {
     window.scrollTo(0, 0);
   }
@@ -51,6 +52,7 @@ export class Home extends Component {
     window.removeEventListener("scroll", this.props.changeScrollTopShow);
   }
 }
+
 const mapStateToProps = (state) => ({
   showScroll: state.getIn(["home", "showScroll"]),
 });

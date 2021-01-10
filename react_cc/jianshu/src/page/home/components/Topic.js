@@ -1,8 +1,8 @@
-import React, { Component } from "react";
+import React, { PureComponent } from "react";
 import { TopicWapper, TopicItem } from "../style";
 import {connect} from 'react-redux'
 
-export class Topic extends Component {
+export class Topic extends PureComponent {
   render() {
     return (
       <TopicWapper>{this.props.list.map((item)=>{

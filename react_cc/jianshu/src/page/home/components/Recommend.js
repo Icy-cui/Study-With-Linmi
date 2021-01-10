@@ -1,8 +1,8 @@
-import React, { Component } from "react";
+import React, { PureComponent } from "react";
 import { RmdWapper, RmdItem } from "../style";
 import { connect } from "react-redux";
 
-export class Recommend extends Component {
+export class Recommend extends PureComponent {
   render() {
     const { list } = this.props;
     return (
