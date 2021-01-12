@@ -1,18 +1,17 @@
 import axios from "axios";
 import * as constants from "./constants";
-import { fromJS } from "immutable";
 
 const changeDetail = (title, content) => ({
     type: constants.CHANGE_DETAIL,
     title,
-    content
-})
+    content,
+});
 
 export const getDetail = (id) => {
     return (dispatch) => {
-        axios.get("./api/detail.json?id=" + id).then((response) => {
+        axios.get("../api/detail.json?id=" + id).then((response) => {
             const result = response.data.data;
             dispatch(changeDetail(result.title, result.content));
-        });
+        }).catch((err) => { alert(err + " error occur!") });
     };
 };

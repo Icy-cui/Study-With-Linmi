@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import { actionCreators } from "./store/index";
+//logout的时候需要修改状态
+import { actionCreators as loginActCreators } from "../../page/login/store";
 //redux: 与最外层的store（数据）进行连接
 import { connect } from "react-redux";
 // 动画效果库
@@ -62,7 +64,7 @@ export class Header extends Component {
   }
 
   render() {
-    const { focused, list } = this.props;
+    const { focused, list, login, logout } = this.props;
     return (
       <HeaderWapper>
         <Link to="/">
@@ -71,7 +73,16 @@ export class Header extends Component {
         <Nav>
           <NavItem className="left-navitem active">Home</NavItem>
           <NavItem className="left-navitem">下载App</NavItem>
-          <NavItem className="right-navitem">登录</NavItem>
+          {login ? (
+            <NavItem className="right-navitem" onClick={logout}>
+              退出
+            </NavItem>
+          ) : (
+            <Link to={"/login"}>
+              <NavItem className="right-navitem">登录</NavItem>
+            </Link>
+          )}
+
           <NavItem className="right-navitem">Aa</NavItem>
           <SearchWapper>
             <CSSTransition in={focused} timeout={200} classNames="slide">
@@ -86,7 +97,9 @@ export class Header extends Component {
         </Nav>
         <Addition>
           <NavButton className="reg">注册</NavButton>
-          <NavButton className="writting">写文章</NavButton>
+          <Link to="/write">
+            <NavButton className="writting">写文章</NavButton>
+          </Link>
         </Addition>
       </HeaderWapper>
     );
@@ -102,6 +115,7 @@ const mapStateToProps = (state) => {
     page: state.getIn(["header", "page"]),
     totalPage: state.getIn(["header", "totalPage"]),
     mouseIn: state.getIn(["header", "mouseIn"]),
+    login: state.getIn(["login", "login"]),
   };
 };
 
@@ -132,6 +146,9 @@ const mapDispatchToProps = (dispatch) => {
       } else {
         dispatch(actionCreators.changePage(1));
       }
+    },
+    logout() {
+      dispatch(loginActCreators.logout());
     },
   };
 };

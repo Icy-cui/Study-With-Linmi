@@ -2,6 +2,7 @@ import styled from "styled-components";
 import logoPic from "../../statics/logo.png";
 
 const HeaderWapper = styled.div `
+  z-index:1;
   position: relative;
   height: 56px;
   border-bottom: 1px solid #f0f0f0;
@@ -32,6 +33,7 @@ const NavItem = styled.div `
   padding: 0 20px;
   font-size: 17px;
   color: #333;
+  cursor: pointer;
   &.left-navitem {
     float: left;
   }
@@ -143,6 +145,7 @@ const NavButton = styled.div `
   border-radius: 19px;
   border: 1px solid #ec6149;
   font-size: 14px;
+  cursor: pointer;
   &.reg {
     color: #ec6149;
   }
