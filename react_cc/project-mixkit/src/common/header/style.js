@@ -2,6 +2,7 @@ import styled from "styled-components";
 import logoPic from "../../statics/logo.png";
 
 const HeaderWapper = styled.div `
+  z-index: 1;
   position: relative;
   height: 55px;
   border-bottom: 1px solid #f0f0f0;
@@ -34,6 +35,7 @@ const NavItem = styled.div `
   padding: 0 20px;
   font-size: 17px;
   color: #333;
+  cursor: pointer;
   &.left-navitem {
     float: left;
   }
@@ -95,6 +97,7 @@ const SearchInfo = styled.div `
   width: 240px;
   padding: 0 20px;
   box-shadow: 0 0 8px rgb(0, 0, 0, 0.2);
+  background: #fff;
 `;
 
 const SearchInfoTitle = styled.div `
@@ -144,6 +147,7 @@ const NavButton = styled.div `
   border-radius: 19px;
   border: 1px solid #527590;
   font-size: 14px;
+  cursor: pointer;
   &.reg {
     color: #527590;
   }

@@ -1,16 +1,18 @@
-import React, { Component } from 'react'
-import {HomeWapper} from './style'
+import React, { Component } from "react";
+import { HomeWapper } from "./style";
+import Content from "./components/Content";
 
-import Banner from './components/Banner'
+import Banner from "./components/Banner";
 
 export class Home extends Component {
-    render() {
-        return (
-            <HomeWapper>
-                <Banner />
-            </HomeWapper>
-        )
-    }
+  render() {
+    return (
+      <HomeWapper>
+        <Banner />
+        <Content />
+      </HomeWapper>
+    );
+  }
 }
 
-export default Home
+export default Home;
