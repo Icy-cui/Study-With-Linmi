@@ -1,0 +1,47 @@
+{
+    "success": true,
+    "data": {
+        "videoContentList": [{
+                "id": "1",
+                "description": "Nature",
+                "imgUrl": "https://mixkit.imgix.net/static/home/video-thumb1.png?w=445&h=250&fit=crop&q=80&auto=format%2Ccompress"
+            },
+            {
+                "id": "2",
+                "description": "Drone Shots",
+                "imgUrl": "https://mixkit.imgix.net/static/home/video-thumb2.png?w=445&h=250&fit=crop&q=80&auto=format%2Ccompress"
+            },
+            {
+                "id": "3",
+                "description": "Technology",
+                "imgUrl": "https://mixkit.imgix.net/static/home/video-thumb3.png?w=445&h=250&fit=crop&q=80&auto=format%2Ccompress"
+            },
+            {
+                "id": "4",
+                "description": "People",
+                "imgUrl": "https://mixkit.imgix.net/static/home/video-thumb4.png?w=445&h=250&fit=crop&q=80&auto=format%2Ccompress"
+            }
+        ],
+        "musicContentList": [{
+                "id": "1",
+                "description": "Hip-Hop",
+                "imgUrl": "https://mixkit.imgix.net/static/home/music-thumb1.png?w=445&h=250&fit=crop&q=80&auto=format%2Ccompress"
+            },
+            {
+                "id": "2",
+                "description": "Cinematic",
+                "imgUrl": "https://mixkit.imgix.net/static/home/sfx-thumb2.png?w=445&h=250&fit=crop&q=80&auto=format%2Ccompress"
+            },
+            {
+                "id": "3",
+                "description": "Ambient",
+                "imgUrl": "https://mixkit.imgix.net/static/home/sfx-thumb3.png?w=445&h=250&fit=crop&q=80&auto=format%2Ccompress"
+            },
+            {
+                "id": "4",
+                "description": "Funl",
+                "imgUrl": "https://mixkit.imgix.net/static/home/sfx-thumb4.png?w=445&h=250&fit=crop&q=80&auto=format%2Ccompress"
+            }
+        ]
+    }
+}

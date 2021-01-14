@@ -64,7 +64,7 @@ export const ContentItem = styled.div `
   margin-right: 30px;
   height: 161px;
   width: 286px;
-  background: url("https://mixkit.imgix.net/static/home/video-thumb1.png?w=445&h=250&fit=crop&q=80&auto=format%2Ccompress");
+  background: url(${(props) => props.imgUrl});
   background-size: 100%;
   
   .content-text{

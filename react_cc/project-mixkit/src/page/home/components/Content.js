@@ -5,6 +5,7 @@ import {
   ContentInfo,
   ContentItem,
 } from "../style";
+import { connect } from "react-redux";
 
 export class Content extends Component {
   render() {
@@ -23,5 +24,8 @@ export class Content extends Component {
     );
   }
 }
+const mapState = (state) => ({
 
-export default Content;
+})
+
+export default connect(mapState, null)(Content);
