@@ -56,17 +56,17 @@ export const ContentTitle = styled.div `
 `;
 
 export const ContentInfo = styled.div `
-  height: 150px;
-`;
-export const ContentItem = styled.div `
   display: block;
+  height: 150px;
   float: left;
+`;
+
+export const ContentItem = styled.div `
   margin-right: 30px;
   height: 161px;
   width: 286px;
   background: url(${(props) => props.imgUrl});
   background-size: 100%;
-  
   .content-text{
     boxing-size: border-box;
     float:left;
