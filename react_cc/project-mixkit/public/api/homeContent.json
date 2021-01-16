@@ -30,11 +30,32 @@
             {
                 "id": "2",
                 "description": "Cinematic",
-                "imgUrl": "https://mixkit.imgix.net/static/home/sfx-thumb2.png?w=445&h=250&fit=crop&q=80&auto=format%2Ccompress"
+                "imgUrl": "https://mixkit.imgix.net/static/home/music-thumb2.png?w=445&h=250&fit=crop&q=80&auto=format%2Ccompress"
             },
             {
                 "id": "3",
                 "description": "Ambient",
+                "imgUrl": "https://mixkit.imgix.net/static/home/music-thumb3.png?w=445&h=250&fit=crop&q=80&auto=format%2Ccompress"
+            },
+            {
+                "id": "4",
+                "description": "Funk",
+                "imgUrl": "https://mixkit.imgix.net/static/home/music-thumb4.png?w=445&h=250&fit=crop&q=80&auto=format%2Ccompress"
+            }
+        ],
+        "soundEffectList": [{
+                "id": "1",
+                "description": "Game",
+                "imgUrl": "https://mixkit.imgix.net/static/home/sfx-thumb1.png?w=445&h=250&fit=crop&q=80&auto=format%2Ccompress"
+            },
+            {
+                "id": "2",
+                "description": "Lifestyle",
+                "imgUrl": "https://mixkit.imgix.net/static/home/sfx-thumb2.png?w=445&h=250&fit=crop&q=80&auto=format%2Ccompress"
+            },
+            {
+                "id": "3",
+                "description": "Instrument",
                 "imgUrl": "https://mixkit.imgix.net/static/home/sfx-thumb3.png?w=445&h=250&fit=crop&q=80&auto=format%2Ccompress"
             },
             {

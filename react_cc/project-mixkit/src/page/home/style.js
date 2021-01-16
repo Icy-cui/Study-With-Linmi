@@ -38,6 +38,9 @@ export const BannerWapper = styled.div `
       margin-right: 80px;
       font-size: 24px;
       color: rgb(42, 42, 42);
+      &:hover {
+        color: #0c60a0;
+      }
     }
   }
 `;
@@ -49,16 +52,24 @@ export const ContentWapper = styled.div `
 `;
 
 export const ContentTitle = styled.div `
-  color: #2a2a2a;
+  padding: 20px 5px 13px 5px;
+  cursor: pointer;
   font-size: 24px;
-  line-height: 20px;
-  padding: 20px 5px;
+  width: 150px;
+
+  a {
+    color: rgb(42, 42, 42);
+    &:hover {
+      color: #0c60a0;
+    }
+  }
 `;
 
 export const ContentInfo = styled.div `
   display: block;
   height: 150px;
   float: left;
+  cursor: pointer;
 `;
 
 export const ContentItem = styled.div `
@@ -67,11 +78,11 @@ export const ContentItem = styled.div `
   width: 286px;
   background: url(${(props) => props.imgUrl});
   background-size: 100%;
-  .content-text{
+  .content-text {
     boxing-size: border-box;
-    float:left;
-    text-align:left;
-    margin-top:110px;
+    float: left;
+    text-align: left;
+    margin-top: 110px;
     margin-left: 20px;
     color: #fff;
     font-size: 18px;

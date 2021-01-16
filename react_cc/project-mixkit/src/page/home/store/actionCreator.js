@@ -5,7 +5,8 @@ import { fromJS } from "immutable";
 const changeHomeData = (result) => ({
     type: constants.CHANGE_HOME_DATA,
     videoContentList: result.videoContentList,
-    musicContentList: result.musicContentList
+    musicContentList: result.musicContentList,
+    soundEffectList: result.soundEffectList
 });
 
 export const getList = () => {

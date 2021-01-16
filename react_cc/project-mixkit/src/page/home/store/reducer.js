@@ -3,7 +3,8 @@ import * as constants from "./constants";
 
 const defaultState = fromJS({
     videoContentList: [],
-    musicContentList: []
+    musicContentList: [],
+    soundEffectList: []
 });
 
 // eslint-disable-next-line import/no-anonymous-default-export
@@ -14,6 +15,7 @@ export default (state = defaultState, action) => {
             return state.merge({
                 videoContentList: fromJS(action.videoContentList),
                 musicContentList: fromJS(action.musicContentList),
+                soundEffectList: fromJS(action.soundEffectList),
             });
         default:
             console.log("No " + action.type + " found.");
