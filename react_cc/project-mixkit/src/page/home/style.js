@@ -88,3 +88,37 @@ export const ContentItem = styled.div `
     font-size: 18px;
   }
 `;
+
+export const InfoWapper = styled.div `
+  display: flex;
+  flex-direction: row;
+  padding: 60px 23px;
+  max-width: 1440px;
+  .info-left {
+    flex: 0 0 35%;
+    padding-right: 15px;
+    padding-left: 15px;
+    position: relative;
+    .infoitem-left {
+      margin: auto;
+      position: absolute;
+      top: 25%;
+      left: 18%;
+      right: 10%;
+      font-size: 32px;
+      max-width: 367px;
+    }
+  }
+  .info-right {
+    flex: 0 0 55%;
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+`;
+
+export const InfoItem = styled.p `
+  font-family: Roboto;
+  margin-bottom: 25px;
+  font-size: 18px;
+  padding: 5px;
+`;
