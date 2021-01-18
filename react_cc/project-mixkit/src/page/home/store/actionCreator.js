@@ -6,7 +6,8 @@ const changeHomeData = (result) => ({
     type: constants.CHANGE_HOME_DATA,
     videoContentList: result.videoContentList,
     musicContentList: result.musicContentList,
-    soundEffectList: result.soundEffectList
+    soundEffectList: result.soundEffectList,
+    videoFooterList: result.videoFooterList,
 });
 
 export const getList = () => {

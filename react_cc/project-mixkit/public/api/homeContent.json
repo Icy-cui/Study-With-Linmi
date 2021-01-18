@@ -63,6 +63,39 @@
                 "description": "Transition",
                 "imgUrl": "https://mixkit.imgix.net/static/home/sfx-thumb4.png?w=445&h=250&fit=crop&q=80&auto=format%2Ccompress"
             }
+        ],
+        "videoFooterList": [{
+                "id": 1,
+                "title": "Nature"
+            },
+            {
+                "id": 2,
+                "title": "Lifestyle"
+            },
+            {
+                "id": 3,
+                "title": "Business"
+            },
+            {
+                "id": 4,
+                "title": "Animals"
+            },
+            {
+                "id": 5,
+                "title": "Food"
+            },
+            {
+                "id": 6,
+                "title": "Zoom Backgrounds"
+            },
+            {
+                "id": 7,
+                "title": "Vertical"
+            },
+            {
+                "id": 8,
+                "title": "Backgrounds"
+            }
         ]
     }
 }

@@ -6,6 +6,7 @@ import { connect } from "react-redux";
 import Banner from "./components/Banner";
 import Content from "./components/Content";
 import Information from "./components/Information";
+import Footer from "./components/Footer";
 
 export class Home extends Component {
   render() {
@@ -14,6 +15,7 @@ export class Home extends Component {
         <Banner />
         <Content />
         <Information />
+        <Footer/>
       </HomeWapper>
     );
   }

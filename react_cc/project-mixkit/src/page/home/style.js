@@ -122,3 +122,26 @@ export const InfoItem = styled.p `
   font-size: 18px;
   padding: 5px;
 `;
+
+export const FooterWapper = styled.div `
+  display: flex;
+  flex-direction: row;
+  background: #fff;
+  min-height: 210px;
+  padding: 5px 40px 5px;
+`;
+
+export const FooterItemList = styled.div `
+  display: flex;
+  flex-direction: column;
+  width: 320px;
+  .item-title {
+    font-size: 20px;
+    line-height: 30px;
+  }
+  .item {
+    color: #2a2a2a;
+    line-height: 30px;
+    font-size: 12px;
+  }
+`;
