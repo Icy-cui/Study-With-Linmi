@@ -7,7 +7,7 @@ import {
 } from "../style";
 import { connect } from "react-redux";
 // 动画效果库
-import { CSSTransition } from "react-transition-group";
+// import { CSSTransition } from "react-transition-group";
 
 export class Content extends Component {
   render() {

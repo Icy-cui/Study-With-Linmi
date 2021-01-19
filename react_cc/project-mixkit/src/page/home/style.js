@@ -124,11 +124,17 @@ export const InfoItem = styled.p `
 `;
 
 export const FooterWapper = styled.div `
+  min-width: 1280px;
+  margin-bottom: 20px;
+`;
+
+export const FooterListWapper = styled.div `
   display: flex;
   flex-direction: row;
   background: #fff;
   min-height: 210px;
   padding: 5px 40px 5px;
+  margin-bottom: 20px;
 `;
 
 export const FooterItemList = styled.div `
