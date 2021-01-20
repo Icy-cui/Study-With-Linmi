@@ -151,3 +151,11 @@ export const FooterItemList = styled.div `
     font-size: 12px;
   }
 `;
+
+export const FooterCopyright = styled.div `
+  height: 30px;
+  margin: 10px 500px 10px 300px;
+  padding-top: 15px;
+  font-size: 12px;
+  text-align: center;
+`

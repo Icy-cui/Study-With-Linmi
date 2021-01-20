@@ -1,5 +1,10 @@
 import React, { Component } from "react";
-import { FooterWapper, FooterItemList, FooterListWapper } from "../style";
+import {
+  FooterWapper,
+  FooterItemList,
+  FooterListWapper,
+  FooterCopyright,
+} from "../style";
 import { connect } from "react-redux";
 
 export class Footer extends Component {
@@ -88,9 +93,9 @@ export class Footer extends Component {
             })}
           </FooterItemList>
         </FooterListWapper>
-        <div
-          style={{ height: "100px", width: "1280px", backgroundColor: "blue" }}
-        ></div>
+        <FooterCopyright>
+          Copyright © 2021. All rights reserved - Made by Envato Elements
+        </FooterCopyright>
       </FooterWapper>
     );
   }
