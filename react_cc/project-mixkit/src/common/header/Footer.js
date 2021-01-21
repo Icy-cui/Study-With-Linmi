@@ -4,7 +4,7 @@ import {
   FooterItemList,
   FooterListWapper,
   FooterCopyright,
-} from "../style";
+} from "./style";
 import { connect } from "react-redux";
 
 export class Footer extends Component {

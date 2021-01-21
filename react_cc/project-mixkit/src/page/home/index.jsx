@@ -6,7 +6,7 @@ import { connect } from "react-redux";
 import Banner from "./components/Banner";
 import Content from "./components/Content";
 import Information from "./components/Information";
-import Footer from "./components/Footer";
+import Footer from "../../common/header/Footer";
 
 export class Home extends Component {
   render() {

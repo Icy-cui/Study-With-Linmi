@@ -172,3 +172,40 @@ export {
     SearchInfoItem,
     SearchInfoList
 };
+
+export const FooterWapper = styled.div `
+  min-width: 1280px;
+  margin-bottom: 20px;
+`;
+
+export const FooterListWapper = styled.div `
+  display: flex;
+  flex-direction: row;
+  background: #fff;
+  min-height: 210px;
+  padding: 5px 40px 5px;
+  margin-bottom: 20px;
+`;
+
+export const FooterItemList = styled.div `
+  display: flex;
+  flex-direction: column;
+  width: 320px;
+  .item-title {
+    font-size: 20px;
+    line-height: 30px;
+  }
+  .item {
+    color: #2a2a2a;
+    line-height: 30px;
+    font-size: 12px;
+  }
+`;
+
+export const FooterCopyright = styled.div `
+  height: 30px;
+  margin: 10px 500px 10px 300px;
+  padding-top: 15px;
+  font-size: 12px;
+  text-align: center;
+`
