@@ -5,7 +5,7 @@ export const MusicWapper = styled.div `
   margin: 0 auto;
 `;
 export const MusicHeader = styled.div `
-position: relative;
+  position: relative;
   min-height: 70px;
   padding-top: 0;
   background-color: #31208d;
@@ -18,9 +18,21 @@ export const MusicBanner = styled.div `
 `;
 
 export const HeaderItem = styled.a `
-    float: left;
-    padding: 25px 30px 20px 50px;
-    color: rgb(255, 255, 255);
-    font-size: 16px;
-    width: 50px;
-`
+  float: left;
+  padding: 25px 30px 20px 50px;
+  color: rgb(255, 255, 255);
+  font-size: 16px;
+  width: 50px;
+`;
+
+export const VideoWapper = styled.div `
+  overflow: hidden;
+  margin: 0 auto;
+`;
+
+export const VideoHeader = styled.div `
+  position: relative;
+  min-height: 70px;
+  padding-top: 0;
+  background-color: green;
+`;
