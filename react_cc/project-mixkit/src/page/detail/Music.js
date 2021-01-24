@@ -1,14 +1,15 @@
 import React, { Component } from "react";
-import { MusicWapper, MusicHeader, HeaderItem } from "./style.js";
+import { MusicWapper, MusicHeader, MusicBanner } from "./style.js";
 
 export class Music extends Component {
   render() {
     return (
       <MusicWapper>
         <MusicHeader>
-            <HeaderItem>类型  </HeaderItem>
-            <HeaderItem>心情  </HeaderItem>
-            <HeaderItem>标签  </HeaderItem>
+          <a href="/">类型</a>
+          <a href="/">类型</a>
+          <a href="/">类型</a>
+          <MusicBanner />
         </MusicHeader>
       </MusicWapper>
     );

@@ -4,7 +4,7 @@ import logoPic from "../../statics/logo.png";
 const HeaderWapper = styled.div `
   z-index: 1;
   position: relative;
-  height: 55px;
+  height: 65px;
   border-bottom: 1px solid #f0f0f0;
 `;
 
@@ -15,14 +15,14 @@ const Logo = styled.a `
   display: block;
   height: 48px;
   width: 206px;
-  margin-top: 3px;
+  margin-top: 6px;
   margin-left: 8px;
   background: url(${logoPic});
   background-size: contain;
 `;
 
 const Nav = styled.div `
-  margin: 0 200px;
+  margin: 7px 200px;
   height: 100%;
   ${'' /* width: 680px; */}
   padding-left: 30px;
