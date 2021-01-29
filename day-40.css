@@ -1,0 +1,48 @@
+h2:hover {
+    color: red;
+}
+
+#title {
+    color: green;
+}
+
+.subtitle {
+    color: blue;
+}
+
+
+/* child selector */
+
+li:first-child {
+    color: blue;
+}
+
+
+/* child selector: every fifth li element be steelblue  */
+
+li:nth-child(5) {
+    color: steelblue;
+}
+
+li:only-child {
+    color: purple;
+}
+
+h2+a {
+    color: red;
+}
+
+ul>li {
+    background-color: rgb(202, 202, 202);
+}
+
+ul li {
+    color: rgb(122, 94, 116);
+}
+
+
+/* all img in this dir have same css*/
+
+img[src^='./day-40-img/'] {
+    border: 10px solid black;
+}
