@@ -1,13 +1,25 @@
-h2:hover {
-    color: red;
+body {
+    background: linear-gradient(to bottom, rgb(204, 229, 255), rgba(204, 229, 255, 0.3));
 }
 
 #title {
-    color: green;
+    color: #61688c;
 }
 
 .subtitle {
-    color: blue;
+    color: #7c7ca1;
+}
+
+.contact {
+    color: #ce6c41;
+}
+
+#service-image {
+    height: 400px;
+    width: 70%;
+    /* background: linear-gradient(155deg, red, turquoise, blue); */
+    background: radial-gradient(circle, red, turquoise, blue);
+    background-size: cover;
 }
 
 
@@ -43,6 +55,7 @@ ul li {
 
 /* all img in this dir have same css*/
 
-img[src^='./day-40-img/'] {
+
+/* img[src^='./day-40-img/'] {
     border: 10px solid black;
-}
+} */
