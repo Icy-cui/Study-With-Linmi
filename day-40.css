@@ -1,13 +1,17 @@
 body {
     background: linear-gradient(to bottom, rgb(204, 229, 255), rgba(204, 229, 255, 0.3));
+    font-family: 'Roboto', Arial, sans-serif;
+    text-align: justify;
 }
 
 #title {
     color: #61688c;
+    font-family: 'Yusei Magic', sans-serif;
 }
 
 .subtitle {
     color: #7c7ca1;
+    font-family: 'Yusei Magic', sans-serif;
 }
 
 .contact {
@@ -16,10 +20,11 @@ body {
 
 #service-image {
     height: 400px;
-    width: 70%;
+    width: 70vw;
     /* background: linear-gradient(155deg, red, turquoise, blue); */
     background: radial-gradient(circle, red, turquoise, blue);
     background-size: cover;
+    padding: 10px;
 }
 
 
@@ -44,9 +49,10 @@ h2+a {
     color: red;
 }
 
-ul>li {
+
+/* ul>li {
     background-color: rgb(202, 202, 202);
-}
+} */
 
 ul li {
     color: rgb(122, 94, 116);
@@ -59,3 +65,15 @@ ul li {
 /* img[src^='./day-40-img/'] {
     border: 10px solid black;
 } */
+
+.italics {
+    font-style: italic;
+}
+
+#about-us-image {
+    height: 300px;
+    width: 40vw;
+    border: 2px solid #353535;
+    margin: 0 40px;
+    float: right;
+}
